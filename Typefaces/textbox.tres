@@ -1,0 +1,7 @@
+[gd_resource type="StreamTexture" format=2]
+
+[resource]
+
+flags = 4
+load_path = "res://.import/textbox.png-acecb45954c771992d49f6675acb4718.stex"
+

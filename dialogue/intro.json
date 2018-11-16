@@ -1,0 +1,33 @@
+{"intro": {
+		"d":[
+			"Finally, the shop is all ready!",
+			{
+				"next":"intro2",
+				"character":"Rudy",
+				"face":"neutral"
+			}
+		]
+	},
+
+
+	"intro2":{
+		"d":[
+			"I've waited so long for this moment.",
+			{
+				"next":"intro3",
+				"character":"Rudy",
+				"face":"happy"
+			}
+		]
+	},
+	"intro3":{
+		"d":[
+			"I better start setting up the animals before customers start arriving.",
+			{
+				"next":"end",
+				"character":"Rudy",
+				"face":"think"
+			}
+		]
+	}
+}

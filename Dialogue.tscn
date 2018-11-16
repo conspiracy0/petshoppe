@@ -1,0 +1,240 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/DialogueParser.gd" type="Script" id=1]
+[ext_resource path="res://Typefaces/textbox.png" type="Texture" id=2]
+[ext_resource path="res://Typefaces/gpzucv.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Typefaces/header.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthclosed.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthopen.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthhalfopen.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthclosed.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthopen.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthhalfopen.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/PC/PC_think_mouthclosed.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/PC/PC_think_mouthopen.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/PC/PC_think_mouthhalfopen.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthclosed.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthopen.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthhalfopen.png" type="Texture" id=16]
+[ext_resource path="res://Node.gd" type="Script" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 15
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Dialogue" type="Node"]
+
+[node name="DialogueParser" type="Node" parent="." index="0"]
+
+script = ExtResource( 1 )
+
+[node name="DialogueBox" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 319.728, 402.173 )
+scale = Vector2( 2.02451, 1.42857 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Button" type="Button" parent="DialogueBox" index="0"]
+
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -155.0
+margin_top = -52.0
+margin_right = 152.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="Label" type="Label" parent="DialogueBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -142.0
+margin_top = -25.0
+margin_right = 142.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Character" type="Label" parent="DialogueBox" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -141.0
+margin_top = -49.0
+margin_right = -4.0
+margin_bottom = -27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DoneIndicator" type="Label" parent="DialogueBox" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 26.0
+margin_right = 172.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="PCTalk" type="Node" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="PCTalkNeutral" type="Sprite" parent="PCTalk" index="0"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 113.173, 184.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NeutralMouthOpen" type="Sprite" parent="PCTalk/PCTalkNeutral" index="0"]
+
+visible = false
+texture = ExtResource( 6 )
+
+[node name="NeutralMouthHalf" type="Sprite" parent="PCTalk/PCTalkNeutral" index="1"]
+
+visible = false
+texture = ExtResource( 7 )
+
+[node name="PCTalkHappy" type="Sprite" parent="PCTalk" index="1"]
+
+visible = false
+position = Vector2( 115.173, 186.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="HappyOpen" type="Sprite" parent="PCTalk/PCTalkHappy" index="0"]
+
+visible = false
+texture = ExtResource( 9 )
+
+[node name="HappyHalf" type="Sprite" parent="PCTalk/PCTalkHappy" index="1"]
+
+visible = false
+texture = ExtResource( 10 )
+
+[node name="PCTalkThink" type="Sprite" parent="PCTalk" index="2"]
+
+visible = false
+position = Vector2( 115.173, 188.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ThinkOpen" type="Sprite" parent="PCTalk/PCTalkThink" index="0"]
+
+visible = false
+texture = ExtResource( 12 )
+
+[node name="ThinkHalf" type="Sprite" parent="PCTalk/PCTalkThink" index="1"]
+
+visible = false
+texture = ExtResource( 13 )
+
+[node name="PCTalkSad" type="Sprite" parent="PCTalk" index="3"]
+
+visible = false
+position = Vector2( 99.1732, 186.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SadOpen" type="Sprite" parent="PCTalk/PCTalkSad" index="0"]
+
+visible = false
+texture = ExtResource( 15 )
+
+[node name="SadHalf" type="Sprite" parent="PCTalk/PCTalkSad" index="1"]
+
+visible = false
+texture = ExtResource( 16 )
+
+[node name="Node" type="Node" parent="." index="3"]
+
+script = ExtResource( 17 )
+
+[connection signal="pressed" from="DialogueBox/Button" to="DialogueParser" method="_on_Button_pressed"]
+
+

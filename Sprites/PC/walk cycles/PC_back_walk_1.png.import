@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/PC_back_walk_1.png-37d80f33615bcbd9961db3f2817d51be.stex"
+
+[deps]
+
+source_file="res://Sprites/PC/walk cycles/PC_back_walk_1.png"
+dest_files=[ "res://.import/PC_back_walk_1.png-37d80f33615bcbd9961db3f2817d51be.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

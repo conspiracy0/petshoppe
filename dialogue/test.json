@@ -1,0 +1,33 @@
+{"intro": {
+		"d":[
+			"The quick brown fox jumps over the lazy dog.",
+			{
+				"next":"intro2",
+				"character":"Rudy",
+				"face":"neutral"
+			}
+		]
+	},
+
+
+	"intro2":{
+		"d":[
+			"I'll have the spaghetti and meatballs.",
+			{
+				"next":"intro3",
+				"character":"Rudy",
+				"face":"think"
+			}
+		]
+	},
+	"intro3":{
+		"d":[
+			"Focus on the fucking magma chamber. We can end this here.",
+			{
+				"next":"intro4",
+				"character":"Rudy",
+				"face":"happy"
+			}
+		]
+	}
+}

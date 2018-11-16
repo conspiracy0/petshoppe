@@ -1,0 +1,193 @@
+Chimera(Working Title) Design Doc
+
+Premise:
+	You move to a quaint town to focus on your passion-- making gene spliced designer pets. You owe money to the bank and have to pay back your loan every month. All other money goes to profits. 
+
+	Gameplay loop is based around making a set number of "open sale" pets for customers to come in and see. Eventually you will start getting custom orders. The open sale pets are created by you and put up on display inside your store. Interested customers will come up and try to haggle with you. For now, you just have to try and haggle at a price you think they'll buy. If time, I'll make this a rhythm game, but thats a stretch goal atm, and the absolute last priority
+
+	Player character will be a cute scientist glasses girl cause why not
+
+Gameplay:
+	Pet Creation:
+		Genes are organized based on scientific Families(Felines, Canines, Mollusks... etc.). You get sub-families as you progress and buy more genetic data. 
+
+		Each subfamily has various stats based on one of four factors:
+			- Cool
+			- Cute
+			- Scary
+			- Weird
+
+		Depending on how you combine them, you will get an output that has certain stat combinations, based on the total share of attributes inside of the final "mixture" of genetic material.
+
+		The appearance of the pet is determined dynamically by the ratio of different subfamilies. Traits are assigned based on ratio in the mixture, based on allocations of 10 percentage points, which are floored and ceilinged to get integers. The smallest possible amount of a mixture can be 10% of the mixture. (you can skip reading the rest of this paragraph if you don't care about the technical parts) It will take all the values of the different ratios (as floating points), divided by 10 and sorted from highest to lowest, and then ceiling the highest value and floor the lowest value. The only exception is if there are two values, and they are within +- 10 percentage points of 50% (59.9 to 41.1) -- this will result in a 50/50 split. I may later implement this pseudo-recursively for secondary values that are near half of each other, so for example, if there are 3 different subfamilies at ratios of 60%, 22%, 18% it will return 6/2/2 instead of 7/2/1. This is a stretch goal, and may not even be optimal. 
+
+		To decrease the art/programming burden, I am going to have only a maximum of FOUR subfamilies allowed inside of the mixture. The pet is arranged dymnamically based on a Limb/Attribute system, which are:
+			Starting from the biggest share of genetic material, and going down.
+				1 - Body
+				2 - Personality/Size
+				3 - Arms
+				4 - Tail
+				5 - Ears
+				6 - Head
+				7 - Legs
+				8 - Eyes
+				9 - Mouth/Nose
+				10 - Hands/Feet
+
+		If an animal has "7 ranks" of genetic materials, that means they have the attributes of everything from 1-7. The next animal(s) will recieve attributes from 8, 9, and 10. Note that sense personality is just a personality, there are only 9 physical traits. This order is subject to change, but the basic idea is that there will be no "isolated" limbs, like for example, a cat body, a fish arm, and a cat hand. I think the current order will avoid that, but we may have to see. 
+
+		Since one animal will always make up the plurality, that means that the biggest amount of material will, at minimum, recieve the first four ranks of traits(in a 3-2-2-2 split) This means that the body, arms, and tail can all be constructed as one object, and the rest need to be modular.
+
+		Some examples:
+			If a mixture is 65% small cat, 25% small dog, and 10% bird, it will actually get 7 traits from small cat, 2 ranks from small dog, and 1 rank from bird. 
+			If a mixture is 32% small cat, 34.6% small dog, and 33.4% bird, it will get: 4 ranks from small dog, and 3 ranks from bird and small cat
+
+		This same ratio algorithm is used to determine the amounts of Cool, Cute, Scary, and Weird you get -- the inital values are multiplied by the percentage points, i.e., a 60-30-10 split will get 0.6, 0.4, and 0.1 * their attribute values, and then summed up and displayed in various bars, or some other sort of visual display.
+
+		I am currently aiming for the following subfamilies
+
+		"Normal" Unlockables (Stretch goals marked by **)
+			Felinae:
+				Big Cat
+				Small Cat
+			Canine:
+				Big Dog
+				Small Dog
+				Fox
+				**Wolf
+			Avian:
+				Songbirds/Parrotlike(cockatiels, parrots, etc)
+				Birds of Prey/Raptors
+				**Owl
+				**Waterfowl
+			Fish:
+				Pet Fish/Goldfish
+				**Sea/Lake Fish
+			Aquatic:
+				Penguin
+				Dolphin
+				**Seal
+			Monkey:
+				Gorilla
+				**Chimp
+			Reptiles:
+				Gecko
+				Snake(?)(maybe unable to reasonably due with the limb system, but may just be funny to have cats with no hands)
+				Turtle
+				**Crab
+				**Bearded Dragon
+			Small Mammals:
+				Hamster
+				**Ferret
+
+		"Special" unlockables that cost more, or are only awarded from events:
+			Shark
+			Gun(Yes a living gun)
+			Human
+			**Bear
+
+	Customers:
+		Customers will have different preferences, as well as different types of haggling limits.
+		For the game jam, I am aiming for 15-20 "standard" customers, and a stretch goal of 1-3 Special/event characters
+			Standard customers are just randomized NPCs that come in and potentially buy things. They have different, exaggerated appearances that will determine their preferences. They will only have 3 static images for the haggling sprites, and then a basic walk cycle with up/down/left/right typical of an overhead RPG. The static images will be them in a closeup from a side view, with Neutral, Happy, and Angry/Upset expressions.
+
+		Working list of Normal customers:
+			Young Girl A
+			- Stereotypical young girl with like pigtails or some shit
+			- Prefers cute pets
+			- Haggling difficulty: Very Easy
+
+			Young Girl B
+			- Feisty looking tsundere type 
+			- Prefers cool pets
+			- Haggling difficulty: Very Easy
+
+			Young Boy A
+			- Standard clean cut rowdy young boy
+			- Prefers cool pets
+			- Haggling difficulty: Very Easy
+
+			Young Boy B
+			- Looks more rough and bully-like
+			- Prefers scary pets
+			- Haggling difficulty: Very easy
+
+			Mom A
+			- Classic Ara Ara~ mom
+			- Prefers cute pets
+			- Haggling difficulty: Easy
+
+			Mom B
+			- Pit mommy
+			- Prefers scary and cool pets
+			- Haggling difficulty: Easy 
+
+			Dad A
+			- (Tough looking dad)
+			- Prefers cool and scary pets
+			- Haggling difficulty: Easy
+
+			Dad B
+			- "Friendly dad" 
+			- Prefers cute and cool pets
+			- Haggling difficulty: Easy
+
+			Teen A
+			- Nerd, but in the classic dexters lab poindexter sense(not necessarily beta)
+			- Prefers weird pets
+			- Haggling difficult: Medium
+
+			Teen B
+			- A stacy bitch, maybe a bit cyberpunky-ganguro kind of vibe?
+			- Prefers cute and weird pets
+			- Haggling difficulty: Easy
+
+			Teen C
+			- A jock, but the nice kind that spots you at the gym and teaches you correct squat form
+			- https://i.redd.it/oj9fpuz31dq01.jpg
+			- Prefers cool and weird pets
+			- Haggling Difficulty: Easy
+
+			Teen D
+			- Emo kid weirdo
+			- Prefers scary and weird pets
+			- Haggling difficulty: Very Easy
+
+			Teen E
+			- Delinquent tomboy musclegirl smoker gf
+			- Prefers cool and scary pets
+			- Haggling difficulty: Medium
+
+			Old Man 
+			- Grouchy looking old scrooge
+			- Prefers cool pets... barely
+			- Haggling Difficulty: Very Hard
+
+			Old Woman
+			- Kind looking grandma
+			- Prefers cute pets
+			- Haggling difficulty: Very Hard
+
+			Neet
+			-Fat sweaty Neet
+			-Prefers cute
+			-Haggling diffuculty: Hard
+
+			remaining four, if time, i'll leave to Sylas. The new ones should ideally prefer scary and/or weird, since the current total of preferences is:
+				Cute: 6
+				Cool: 8
+				Scary: 5
+				Weird: 4
+
+		Special/Event Customers
+			Ojou-sama:
+				Comes with butler as well. Gives you a week to come up with the most "luxurious" pet possible.
+				If she likes what you give her, she will give you the Shark DNA and a ton of money.
+
+			Hitman/Assassin dude:
+				Some sketchy looking badass. Wants something to guard him/"help him out".
+				If he likes what you give him, he'll give you the Gun DNA and a ton of money.
+
+			Leave last one to your discretion
+
+

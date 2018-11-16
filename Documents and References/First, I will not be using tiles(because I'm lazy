@@ -1,0 +1,128 @@
+First, I will not be using tiles(because I'm lazy and its unnecessary), and sprites are going to be of various sizes, and can be dynamically scaled in godot to be bigger or smaller.
+Second, because I am not using tiles, be careful when designing the store and character sprites so that they will fit nicely inside of the store. Make sure walking spaces are at least 1 "sprite" large, including the transparent borders.
+
+Spriting Priorities:
+	Ranked from highest to lowest, including in subcategories
+	1. Main Character Sprites
+		- Concept art for designs
+		- Close up of them when they talk to customers/themselves in the store, side view, with Normal, happy, and sad expressions, as well as lip movement. Also a thinking sprite/animation
+		- Full body reference/CG sprite?
+		- Standard, pokemontrainer/rpgmaker style updownleftright sprite
+		- I would ideally like the closeup sprites of the PC and all customers to be about the same resolution as the Va-11-hallA sprites or the ace attorney investigations sprites, in a similar pose as the ace attorney sprites, where they are reversible and characters line up side to side.
+		Reference:  AAI sprites: http://www.court-records.net/animationgk/gksheet-miles(spoil).gif. They don't have to be this detailed, however.
+					example va11halla sprites: https://puu.sh/BZ4Ga/9122a60494.png
+	2. Storefront and Lab
+		- Store:
+			Use this as a reference idea for what the store should look like:
+			https://vignette.wikia.nocookie.net/recettear/images/5/56/Recettearitemshop.jpg/revision/latest?cb=20100914203321
+
+			That being said, you should do a slightly more top-down design with less features on the characters in this view
+			
+			-Will also need animations for opening and closing front door, UI elements(put off for now, but will try and update you on that soon)
+			-The entire store should be visible in one static camera view.
+			-The aspect ratio is up to you, 4:3 is fine as is 16:9. There will be black bars if needed.
+
+		- Lab:
+			Use this as a reference idea for how the functionality of the lab would work:
+			https://puu.sh/BZ2SO/6dfdf24469.png (probably about the resolution or near it you should aim for, maybe go a bit bigger, up to you)
+			https://puu.sh/BZ3nw/e5555074fe.mp4 (Ideally you would actually click on the physical objects instead of a phone/tablet app)
+
+			The level of interactivity with the background objects is up to you, and how much you want to do. Feel free to use a chibi version of the player character too. 
+			
+			-Ideally, the lab should have the same aspect ratio as the store.
+
+			The lab contains the following interactive elements:
+				- Your computer
+					Used to order new genetic material, and resources
+				- Your genetic recombination station
+					-Contains a scientific looking DNA machine with four tubes. Use your imagination and/or google actual dna analysis machines
+					-A blender, for processing failures.
+				- A ledger/calendar
+				- Bed(To go to next day)
+
+			The lab contains the following dynamic, but not interactive elements:
+				- A whiteboard that lists special orders, and if you are low on certain stocks of resources
+
+			The lab also contains random non-interactive, non-dynamic decorations. I don't care whats there, besides a desk.
+			Stretch goal would be to allow customization.
+
+			You sit at the desk by default when you enter. Player mouse over the interactive elements and they light up/play small animation/show text to indicate they are interactive.
+			Upon clicking the interactive elements, a transition animation plays.
+
+			There will need to be another completely full screen for the DNA synthesis table that is shifted to when it is clicked, as well as one for "using the computer," detailed below.
+
+			-DNA Synthesis:
+				- Should consist of a table, the machine, and the blender.
+				- Each animal DNA should correspond to a color, and sprites should be made for each "tube" when its filled with color(just use the same "filled" tube sprite and pallete swap)
+					-Put the RGB/Hex value for each animal in a text document somewhere so i can use them easily
+
+				- Will need UI features for the DNA synthesis. Here's a basic mockup: http://puu.sh/BZ4e2/fd9b4c0d3e.png
+					- You'll need sprites for the 5 "Empty" tubes" and then like the 4 main "filled" tubes, as well as the one that will be dynamically adjusted, as well as the make animal and slider UI buttons, and custom fonts if you want them.
+
+				- Animations will be needed for when the machine is running, and when it finishes.
+					- The way I invision the finishing animation is the "output door" on the machine will open, and smoke will fill the screen, then the image of the new pet will appear in front of some like glowing star/box frame, with some text like "Success!" Sort of like this: https://youtu.be/XWKMpQi5fOM
+				
+				- Will need an animation for putting a pet in the blender. To save time/not show actual pet blending, I would just have the player move in front of the machine or some other camera trick.
+
+			- Computer:
+				- There will need to be a "frame" so to speak for a web browser, and a likely deep web market. Sprites will be needed for "BUY," a logo/banner for the site, a scroll bar, and a mouse cursor, as well as the page background and font.
+				- There will need to be a small, undetailed icon for each animal DNA you can buy, as well as one for "Bulk Organic Tissue"
+				- After you finish spriting an animal part, make the icon for it to go here.
+
+	3. Animals
+		The way this will work will be by making all the sprites modular with one another. Make them all work at the maximum size, and the animals will be scaled down algorithmically later. You will need to use a healthy dose of photoshop layers to make sure all the parts can work with one another. There is no minimum or maximum pixel resolution and you can make the animals whatever resolution you want. I am, however, going to have all the animals on all fours and/or leaning forward.
+
+		Each body part sprite will need to be saved individually. These are:
+			- Body, Arms/Front legs, and Tail
+			- Ears
+			- Eyes
+			- Head
+			- Mouth/Nose
+			- Hands/feet
+
+		I would work on them in the following order
+
+		"Normal" Unlockables (Stretch goals marked by **)
+			Felinae:
+				Big Cat
+				Small Cat
+			Canine:
+				Big Dog
+				Small Dog
+				Fox
+				**Wolf
+			Avian:
+				Songbirds/Parrotlike(cockatiels, parrots, etc)
+				Birds of Prey/Raptors
+				**Owl
+				**Waterfowl
+			Fish:
+				Pet Fish/Goldfish
+				**Sea/Lake Fish
+			Aquatic:
+				Penguin
+				**Dolphin
+				**Seal
+			Monkey:
+				Gorilla
+				**Chimp
+			Reptiles:
+				Gecko
+				Snake(?)(maybe unable to reasonably due with the limb system, but may just be funny to have cats with no hands)
+				Turtle
+				**Crab
+				**Bearded Dragon
+			Small Mammals:
+				Hamster
+				**Ferret
+
+		"Special" unlockables that cost more, or are only awarded from events. Don't start on these until all the NPCs are done.
+			Shark
+			Gun(Yes a living gun)
+			Human
+			**Bear
+
+	4. NPCs
+		Work off the list in the design doc, and the instructions there. Sprites should be about the same size as the PC.
+
+UI requests will come whenever I think of them, but they should be amongst the highest priorities as well.
