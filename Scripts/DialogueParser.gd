@@ -18,8 +18,19 @@ var PCsadHalf
 var PCthink
 var PCthinkOpen
 var PCthinkHalf
+signal dialogue_started
+signal dialogue_ended
 
 func _ready():
+	loadPCDialogueAnims() 
+	connect("dialogue_ended", self, "on_dialogue_ended")
+	connect("dialogue_started", self,"on_dialogue_started")
+	#self.get_parent().get_node("../NPCs/Child").connect("dialogue_started",self,"on_dialogue_started")
+	#self.get_parent().get_node("../NPCs/Child").connect("dialogue_ended",self,"on_dialogue_ended")
+func on_dialogue_ended():
+	pass
+
+func on_dialogue_started():
 	pass
 
 func startDialogue(jsonpath):
@@ -29,14 +40,17 @@ func startDialogue(jsonpath):
 	var content = (file.get_as_text())
 	dialogueStream = parse_json(content)
 	file.close()
+	
 	#stop movement
 	get_node("/root/Shop/PC").canMove = false
+	#display everything
 	textBox = get_node("../DialogueBox")
 	textDisplay = textBox.get_node("Label")
 	characterHeader = textBox.get_node("Character")
-	textBox.set_visible(true)
 	textButton = textBox.get_node("Button")
-	loadPCDialogueAnims() #later, only set this to load when a dialogue interaction starts
+	textBox.set_visible(true)
+	#emit signal and 
+	emit_signal("dialogue_started")
 	scrollText(dialogueStream["intro"])
 
 func stopDialogue():
@@ -47,6 +61,8 @@ func stopDialogue():
 	PCneutral.set_visible(false)
 	currDialogue = null
 	dialogueStream = null
+	#signals
+	emit_signal("dialogue_ended")
 	get_node("/root/Shop/PC").canMove = true
 
 func loadPCDialogueAnims():
@@ -66,15 +82,17 @@ func loadPCDialogueAnims():
 func scrollText(jsonfile): #jsonfile should include default path for first dialogue text
 	currDialogue = jsonfile
 	print(currDialogue["d"][1]["next"])
-	var scroller = Timer.new()
+	
 	var animCounter = 0
 	var PCtalking = false
 	var face
 	get_node("../DialogueBox/Button").set_visible(false)
 	get_node("../DialogueBox/DoneIndicator").set_visible(false)
 	#sets up timer
+	var scroller = Timer.new()
 	scroller.set_one_shot(true)
 	scroller.set_wait_time(0.02)
+	self.add_child(scroller)
 	
 	textDisplay.set_visible_characters(0) #deletes current text from screen
 	textDisplay.set_text(currDialogue["d"][0])	#"d" 0 is ALWAYS the message text
@@ -98,8 +116,6 @@ func scrollText(jsonfile): #jsonfile should include default path for first dialo
 		else: #sad
 			PCsad.set_visible(true)
 			
-	self.add_child(scroller)
-	
 	for i in range(currDialogue["d"][0].length()): #gets the max range of string, and iterates displaying each character 1 by 1
 		scroller.start() #this is just godots roundabout way of a wait() function, it prints 1 character every 20 ms
 		yield(scroller, "timeout")
@@ -123,7 +139,9 @@ func scrollText(jsonfile): #jsonfile should include default path for first dialo
 	#ADJUST THIS DURING NPC DIALOGUE SETUP
 	if PCtalking == true:
 		PCmouthanim(face,true)
+	#removes timer
 	scroller.queue_free()
+	#allows movement to next dialogue prompt
 	get_node("../DialogueBox/Button").set_visible(true)
 	get_node("../DialogueBox/DoneIndicator").set_visible(true)
 #random selected animation version

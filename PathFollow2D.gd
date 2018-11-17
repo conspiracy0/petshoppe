@@ -1,10 +1,7 @@
-extends Node
-var introStream
+extends PathFollow2D
 
-onready var dparser = get_node("../DialogueParser")
+onready var pathNode = self.get_parent()
 func _ready():
-	
-	dparser.startDialogue("res://dialogue/intro.json")
 	pass
 
 #func _process(delta):

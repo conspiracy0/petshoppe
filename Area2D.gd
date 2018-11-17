@@ -1,10 +1,10 @@
-extends Node
-var introStream
+extends Area2D
 
-onready var dparser = get_node("../DialogueParser")
+# class member variables go here, for example:
+# var a = 2
+# var b = "textvar"
+
 func _ready():
-	
-	dparser.startDialogue("res://dialogue/intro.json")
 	pass
 
 #func _process(delta):

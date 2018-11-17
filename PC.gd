@@ -20,6 +20,8 @@ func _process(delta):
 	
 func move_player():
 	move_direction = Vector2(0,0)
+	if Input.is_key_pressed(KEY_SPACE):
+		print(self.global_position)
 	if Input.is_key_pressed(KEY_SHIFT):
 		speed = 4
 	if Input.is_key_pressed(KEY_A):

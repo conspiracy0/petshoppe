@@ -1,37 +1,39 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Sprites/Shop/petshop.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Shop/labdoor1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Shop/labdoor2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Shop/frontdoor1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Shop/frontdoor2.png" type="Texture" id=5]
-[ext_resource path="res://PC.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_back_idle.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_1.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_2.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_1.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_2.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_2.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_1.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_side_idle.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_front_idle.png" type="Texture" id=15]
-[ext_resource path="res://IntroDialogue.gd" type="Script" id=16]
-[ext_resource path="res://Scripts/DialogueParser.gd" type="Script" id=17]
-[ext_resource path="res://Typefaces/textbox.png" type="Texture" id=18]
-[ext_resource path="res://Typefaces/gpzucv.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://Typefaces/header.ttf" type="DynamicFontData" id=20]
-[ext_resource path="res://Sprites/PC/PC_sad_mouthclosed.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/PC/PC_sad_mouthopen.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/PC/PC_sad_mouthhalfopen.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/PC/PC_happy_mouthclosed.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/PC/PC_happy_mouthopen.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/PC/PC_happy_mouthhalfopen.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/PC/PC_neutral_mouthclosed.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/PC/PC_neutral_mouthopen.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/PC/PC_neutral_mouthhalfopen.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/PC/PC_think_mouthclosed.png" type="Texture" id=30]
-[ext_resource path="res://Sprites/PC/PC_think_mouthopen.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/PC/PC_think_mouthhalfopen.png" type="Texture" id=32]
+[ext_resource path="res://PC.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_idle.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_idle.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_idle.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/DialogueParser.gd" type="Script" id=14]
+[ext_resource path="res://IntroDialogue.gd" type="Script" id=15]
+[ext_resource path="res://Typefaces/textbox.png" type="Texture" id=16]
+[ext_resource path="res://Typefaces/gpzucv.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Typefaces/header.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthclosed.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthopen.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthhalfopen.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthclosed.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthopen.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthhalfopen.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthclosed.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthopen.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthhalfopen.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/PC/PC_think_mouthclosed.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/PC/PC_think_mouthopen.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/PC/PC_think_mouthhalfopen.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Shop/frontdoor1.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Shop/frontdoor2.png" type="Texture" id=32]
+[ext_resource path="res://Child.gd" type="Script" id=33]
+[ext_resource path="res://Placeholder images/npc.png" type="Texture" id=34]
 
 [sub_resource type="SpriteFrames" id=14]
 
@@ -39,15 +41,6 @@ animations = [ {
 "frames": [ null, ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), null ],
 "loop": false,
 "name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [ null, ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), null ],
-"loop": false,
-"name": "opendoor",
 "speed": 5.0
 } ]
 
@@ -109,32 +102,32 @@ extents = Vector2( 9.45883, 10 )
 [sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "idleback",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "movefront",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "moveside",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "moveback",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "idleside",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "idlefront",
 "speed": 5.0
@@ -145,7 +138,7 @@ animations = [ {
 size = 15
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 19 )
+font_data = ExtResource( 17 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=16]
@@ -153,7 +146,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 20 )
+font_data = ExtResource( 18 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=17]
@@ -161,18 +154,35 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 20 )
+font_data = ExtResource( 18 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ null, ExtResource( 31 ), ExtResource( 32 ), ExtResource( 31 ), null ],
+"loop": false,
+"name": "opendoor",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=18]
+
+animations = [ {
+"frames": [ ExtResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Shop" type="Node" index="0"]
 
 [node name="ShopSprite" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 320.289, 240.649 )
 scale = Vector2( 2.28349, 2.2744 )
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="LabDoorAnimation" type="AnimatedSprite" parent="ShopSprite" index="0"]
 
@@ -181,14 +191,7 @@ scale = Vector2( 1, 1 )
 frames = SubResource( 14 )
 animation = "default"
 
-[node name="FrontDoorAnimation" type="AnimatedSprite" parent="ShopSprite" index="1"]
-
-position = Vector2( 97.9228, -67.8065 )
-frames = SubResource( 1 )
-animation = "opendoor"
-frame = 3
-
-[node name="Counter" type="StaticBody2D" parent="ShopSprite" index="2"]
+[node name="Counter" type="StaticBody2D" parent="ShopSprite" index="1"]
 
 position = Vector2( -84.7122, -28.2479 )
 input_pickable = false
@@ -201,7 +204,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/Counter" index="0"]
 
-position = Vector2( 13.8666, -16.9611 )
+position = Vector2( 13.8666, -17.4125 )
 scale = Vector2( 1.10215, 4.21323 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Material", "Visibility" ]
@@ -212,7 +215,7 @@ position = Vector2( -12.1739, 15.1387 )
 scale = Vector2( 1.50283, 0.958908 )
 shape = SubResource( 3 )
 
-[node name="DisplayCase1" type="StaticBody2D" parent="ShopSprite" index="3"]
+[node name="DisplayCase1" type="StaticBody2D" parent="ShopSprite" index="2"]
 
 editor/display_folded = true
 position = Vector2( -84.4064, 56.1888 )
@@ -230,7 +233,7 @@ position = Vector2( 0.243088, -2.39802 )
 scale = Vector2( 2.78614, 1.96116 )
 shape = SubResource( 6 )
 
-[node name="DisplayCase2" type="StaticBody2D" parent="ShopSprite" index="4"]
+[node name="DisplayCase2" type="StaticBody2D" parent="ShopSprite" index="3"]
 
 editor/display_folded = true
 position = Vector2( 5.42177, -59.5373 )
@@ -249,7 +252,7 @@ position = Vector2( 8.87065, 10.1598 )
 scale = Vector2( 4.01418, 1.78152 )
 shape = SubResource( 7 )
 
-[node name="DisplayCase3" type="StaticBody2D" parent="ShopSprite" index="5"]
+[node name="DisplayCase3" type="StaticBody2D" parent="ShopSprite" index="4"]
 
 editor/display_folded = true
 position = Vector2( -0.416031, 53.4647 )
@@ -268,7 +271,7 @@ position = Vector2( 14.7512, 3.8447 )
 scale = Vector2( 3.91842, 2.2596 )
 shape = SubResource( 8 )
 
-[node name="DisplayCase4" type="StaticBody2D" parent="ShopSprite" index="6"]
+[node name="DisplayCase4" type="StaticBody2D" parent="ShopSprite" index="5"]
 
 editor/display_folded = true
 position = Vector2( 128.785, -45.6131 )
@@ -287,7 +290,7 @@ position = Vector2( -2.02656, -1.48951 )
 scale = Vector2( 1.44372, 1.44369 )
 shape = SubResource( 9 )
 
-[node name="DisplayCase5" type="StaticBody2D" parent="ShopSprite" index="7"]
+[node name="DisplayCase5" type="StaticBody2D" parent="ShopSprite" index="6"]
 
 editor/display_folded = true
 position = Vector2( 131.898, 41.52 )
@@ -306,7 +309,7 @@ position = Vector2( -11.2447, 36.8523 )
 scale = Vector2( 3.04703, 5.15209 )
 shape = SubResource( 10 )
 
-[node name="WallLeft" type="StaticBody2D" parent="ShopSprite" index="8"]
+[node name="WallLeft" type="StaticBody2D" parent="ShopSprite" index="7"]
 
 editor/display_folded = true
 position = Vector2( -173.575, -72.8364 )
@@ -324,7 +327,7 @@ position = Vector2( 13.5355, 75.9368 )
 scale = Vector2( 2.04119, 10.9564 )
 shape = SubResource( 11 )
 
-[node name="WallRight" type="StaticBody2D" parent="ShopSprite" index="9"]
+[node name="WallRight" type="StaticBody2D" parent="ShopSprite" index="8"]
 
 editor/display_folded = true
 position = Vector2( -173.575, -72.8364 )
@@ -342,9 +345,8 @@ position = Vector2( 334.285, 70.1711 )
 scale = Vector2( 2.04119, 10.9564 )
 shape = SubResource( 11 )
 
-[node name="WallTop" type="StaticBody2D" parent="ShopSprite" index="10"]
+[node name="WallTop" type="StaticBody2D" parent="ShopSprite" index="9"]
 
-editor/display_folded = true
 position = Vector2( -46.5585, -90.2494 )
 input_pickable = false
 collision_layer = 1
@@ -360,7 +362,7 @@ position = Vector2( 40.9927, 4.63978 )
 scale = Vector2( 14.6143, 2.39272 )
 shape = SubResource( 12 )
 
-[node name="WallBottom" type="StaticBody2D" parent="ShopSprite" index="11"]
+[node name="WallBottom" type="StaticBody2D" parent="ShopSprite" index="10"]
 
 editor/display_folded = true
 position = Vector2( -49.8123, 138.64 )
@@ -381,12 +383,14 @@ shape = SubResource( 13 )
 
 [node name="PC" type="KinematicBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 98.2703, 155.53 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 6 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PC" index="0"]
 
@@ -403,21 +407,21 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Dialogue" type="Node" parent="." index="2"]
 
-[node name="IntroDialogue" type="Node" parent="Dialogue" index="0"]
+[node name="DialogueParser" type="Node" parent="Dialogue" index="0"]
 
-script = ExtResource( 16 )
+script = ExtResource( 14 )
 
-[node name="DialogueParser" type="Node" parent="Dialogue" index="1"]
+[node name="IntroDialogue" type="Node" parent="Dialogue" index="1"]
 
-script = ExtResource( 17 )
+script = ExtResource( 15 )
 
 [node name="DialogueBox" type="Sprite" parent="Dialogue" index="2"]
 
 visible = false
 position = Vector2( 319.728, 402.173 )
 scale = Vector2( 2.02451, 1.42857 )
-texture = ExtResource( 18 )
-_sections_unfolded = [ "Visibility" ]
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Button" type="Button" parent="Dialogue/DialogueBox" index="0"]
 
@@ -524,36 +528,36 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 visible = false
 position = Vector2( 99.1732, 186.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 21 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SadOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkSad" index="0"]
 
 visible = false
-texture = ExtResource( 22 )
+texture = ExtResource( 20 )
 
 [node name="SadHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkSad" index="1"]
 
 visible = false
-texture = ExtResource( 23 )
+texture = ExtResource( 21 )
 
 [node name="PCTalkHappy" type="Sprite" parent="Dialogue/PCTalk" index="1"]
 
 visible = false
 position = Vector2( 115.173, 186.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 24 )
+texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="HappyOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkHappy" index="0"]
 
 visible = false
-texture = ExtResource( 25 )
+texture = ExtResource( 23 )
 
 [node name="HappyHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkHappy" index="1"]
 
 visible = false
-texture = ExtResource( 26 )
+texture = ExtResource( 24 )
 
 [node name="PCTalkNeutral" type="Sprite" parent="Dialogue/PCTalk" index="2"]
 
@@ -561,36 +565,71 @@ editor/display_folded = true
 visible = false
 position = Vector2( 113.173, 184.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 27 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="NeutralMouthOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkNeutral" index="0"]
 
 visible = false
-texture = ExtResource( 28 )
+texture = ExtResource( 26 )
 
 [node name="NeutralMouthHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkNeutral" index="1"]
 
 visible = false
-texture = ExtResource( 29 )
+texture = ExtResource( 27 )
 
 [node name="PCTalkThink" type="Sprite" parent="Dialogue/PCTalk" index="3"]
 
 visible = false
 position = Vector2( 115.173, 188.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 30 )
+texture = ExtResource( 28 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ThinkOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkThink" index="0"]
 
 visible = false
-texture = ExtResource( 31 )
+texture = ExtResource( 29 )
 
 [node name="ThinkHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkThink" index="1"]
 
 visible = false
-texture = ExtResource( 32 )
+texture = ExtResource( 30 )
+
+[node name="NPCs" type="Node" parent="." index="3"]
+
+[node name="FrontDoorAnimation" type="AnimatedSprite" parent="NPCs" index="0"]
+
+position = Vector2( 543.895, 86.4297 )
+scale = Vector2( 2.28349, 2.2744 )
+frames = SubResource( 1 )
+animation = "opendoor"
+
+[node name="Child" type="KinematicBody2D" parent="NPCs" index="1"]
+
+visible = false
+position = Vector2( 543.4, 137.39 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 33 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPCs/Child" index="0"]
+
+scale = Vector2( 2, 2 )
+frames = SubResource( 18 )
+animation = "default"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NPCs/Child" index="1"]
+
+position = Vector2( 0.766357, 7.55489 )
+scale = Vector2( 2.74355, 2.2023 )
+shape = SubResource( 4 )
+
+[connection signal="dialogue_ended" from="Dialogue/DialogueParser" to="NPCs/Child" method="_on_DialogueParser_dialogue_ended"]
 
 [connection signal="pressed" from="Dialogue/DialogueBox/Button" to="Dialogue/DialogueParser" method="_on_Button_pressed"]
 
