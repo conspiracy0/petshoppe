@@ -54,4 +54,5 @@ func _process(delta):
 			thirdPoint()
 
 func _on_DialogueParser_dialogue_ended():
-	enterBuilding()#change to different signal before release
+	pass
+	#enterBuilding()#change to different signal before release

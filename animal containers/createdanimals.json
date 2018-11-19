@@ -1,0 +1,77 @@
+{
+	"template":{
+		"makeup":{
+			"body": "",
+			"personality":"",
+			"size":0,
+			"tail": "",
+			"ears":"",	
+			"head":"",
+			"legs":"",
+			"eyes":"",
+			"mouth/nose":"",
+			"hands/feet":"",
+		},
+		"inUse":false
+	},
+	"test":{
+		"makeup":{
+			"body": "cat",
+			"personality":"angry",
+			"size":2,
+			"tail": "cat",
+			"ears":"cat",
+			"head":"dog",
+			"legs":"dog",
+			"eyes":"dog",
+			"mouth/nose":"dog",
+			"hands/feet":"dog",
+		},
+		"inUse":false
+	},
+	"test2":{
+		"makeup":{
+			"body": "cat",
+			"personality":"angry",
+			"size":2,
+			"tail": "cat",
+			"ears":"cat",
+			"head":"dog",
+			"legs":"dog",
+			"eyes":"dog",
+			"mouth/nose":"dog",
+			"hands/feet":"dog",
+		},
+		"inUse":false
+	},
+	"test3":{
+		"makeup":{
+			"body": "cat",
+			"personality":"angry",
+			"size":2,
+			"tail": "cat",
+			"ears":"cat",
+			"head":"dog",
+			"legs":"dog",
+			"eyes":"dog",
+			"mouth/nose":"dog",
+			"hands/feet":"dog",
+		},
+		"inUse":false
+	},
+	"test4":{
+		"makeup":{
+			"body": "cat",
+			"personality":"angry",
+			"size":2,
+			"tail": "cat",
+			"ears":"cat",
+			"head":"dog",
+			"legs":"dog",
+			"eyes":"dog",
+			"mouth/nose":"dog",
+			"hands/feet":"dog",
+		},
+		"inUse":false
+	}
+}

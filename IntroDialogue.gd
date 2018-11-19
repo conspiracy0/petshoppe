@@ -4,7 +4,7 @@ var introStream
 onready var dparser = get_node("../DialogueParser")
 func _ready():
 	
-	dparser.startDialogue("res://dialogue/intro.json")
+	#dparser.startDialogue("res://dialogue/intro.json")
 	pass
 
 #func _process(delta):
