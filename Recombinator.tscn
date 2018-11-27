@@ -1,0 +1,351 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorbg.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe6.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe7.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe8.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe9.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcblend1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcblend2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcblend3.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcblend4.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcblend5.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcidle1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcidle2.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcwatch1.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/pcwatch2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorforeground.png" type="Texture" id=20]
+[ext_resource path="res://Machine.gd" type="Script" id=21]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/slideything.png" type="Texture" id=22]
+[ext_resource path="res://Typefaces/rohzrj.otf" type="DynamicFontData" id=23]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/testtubecontents.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Lab/test tubes/pink.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Lab/test tubes/yellow.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Lab/test tubes/darkgreen.png" type="Texture" id=27]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "activate",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "blend",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "idle1",
+"speed": 0.15
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "idle2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "watch",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 11
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 23 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Recombinator" type="Node" index="0"]
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 320.629, 240.11 )
+scale = Vector2( 2.28383, 2.28424 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="Recombinator" type="AnimatedSprite" parent="Background" index="0"]
+
+position = Vector2( -112.706, -6.50784 )
+frames = SubResource( 1 )
+animation = "activate"
+frame = 8
+playing = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="PC" type="AnimatedSprite" parent="Background" index="1"]
+
+position = Vector2( -95.4068, -2.04572 )
+frames = SubResource( 2 )
+animation = "idle1"
+playing = true
+
+[node name="Machine" type="Sprite" parent="." index="1"]
+
+position = Vector2( 435.33, 397.448 )
+scale = Vector2( 2.28383, 2.28424 )
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SliderTube1" type="Sprite" parent="Machine" index="0"]
+
+position = Vector2( -43.3394, 13.5879 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="Machine/SliderTube1" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/SliderTube1/Area2D" index="0"]
+
+position = Vector2( 0.445892, -0.542267 )
+scale = Vector2( 0.437861, 0.437782 )
+shape = SubResource( 3 )
+
+[node name="SliderTube2" type="Sprite" parent="Machine" index="1"]
+
+position = Vector2( -15.3163, 15.339 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D2" type="Area2D" parent="Machine/SliderTube2" index="0"]
+
+position = Vector2( -0.437815, -0.437798 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/SliderTube2/Area2D2" index="0"]
+
+position = Vector2( 0.445892, -0.542267 )
+scale = Vector2( 0.437861, 0.437782 )
+shape = SubResource( 3 )
+
+[node name="SliderTube3" type="Sprite" parent="Machine" index="2"]
+
+position = Vector2( 14.4582, 15.339 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D3" type="Area2D" parent="Machine/SliderTube3" index="0"]
+
+position = Vector2( -0.437798, -0.43779 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/SliderTube3/Area2D3" index="0"]
+
+position = Vector2( 0.445892, -0.542267 )
+scale = Vector2( 0.437861, 0.437782 )
+shape = SubResource( 3 )
+
+[node name="SliderTube4" type="Sprite" parent="Machine" index="3"]
+
+position = Vector2( 41.6055, 13.5879 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D4" type="Area2D" parent="Machine/SliderTube4" index="0"]
+
+position = Vector2( -0.438011, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/SliderTube4/Area2D4" index="0"]
+
+position = Vector2( 0.445892, -0.542267 )
+scale = Vector2( 0.437861, 0.437782 )
+shape = SubResource( 3 )
+
+[node name="LabelTube1" type="Label" parent="Machine" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -40.0
+margin_top = -128.0
+margin_right = 15.0
+margin_bottom = -115.0
+rect_rotation = -63.6642
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
+text = "HAMSTER"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="LabelTube2" type="Label" parent="Machine" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.0
+margin_top = -127.0
+margin_right = 42.0
+margin_bottom = -114.0
+rect_rotation = -63.6642
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
+text = "HAMSTER"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="LabelTube3" type="Label" parent="Machine" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = -127.0
+margin_right = 67.0
+margin_bottom = -114.0
+rect_rotation = -63.6642
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
+text = "HAMSTER"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="LabelTube4" type="Label" parent="Machine" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 38.0
+margin_top = -128.0
+margin_right = 93.0
+margin_bottom = -115.0
+rect_rotation = -63.6642
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
+text = "HAMSTER"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="TestTube1" type="Sprite" parent="Machine" index="8"]
+
+show_behind_parent = true
+position = Vector2( -38.1395, -13.165 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="TestTube2" type="Sprite" parent="Machine" index="9"]
+
+show_behind_parent = true
+position = Vector2( -12.7437, -12.2895 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="TestTube3" type="Sprite" parent="Machine" index="10"]
+
+show_behind_parent = true
+position = Vector2( 13.5279, -12.2895 )
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="TestTube4" type="Sprite" parent="Machine" index="11"]
+
+show_behind_parent = true
+position = Vector2( 39.3617, -13.165 )
+texture = ExtResource( 27 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[connection signal="mouse_entered" from="Machine/SliderTube1/Area2D" to="Machine" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/SliderTube1/Area2D" to="Machine" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/SliderTube2/Area2D2" to="Machine" method="_on_Area2D2_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/SliderTube2/Area2D2" to="Machine" method="_on_Area2D2_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/SliderTube3/Area2D3" to="Machine" method="_on_Area2D3_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/SliderTube3/Area2D3" to="Machine" method="_on_Area2D3_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/SliderTube4/Area2D4" to="Machine" method="_on_Area2D4_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/SliderTube4/Area2D4" to="Machine" method="_on_Area2D4_mouse_exited"]
+
+

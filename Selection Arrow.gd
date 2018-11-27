@@ -1,5 +1,6 @@
 extends Sprite
-
+var isFalling = false
+var posCounter = 0
 var DC1points = {
 	"left": Vector2(100.640015,328.882233),
 	"left2": Vector2(100.640015,377.882233), 
@@ -34,6 +35,18 @@ func _ready():
 	pass
 
 func _process(delta):
+	#hover code
+	if isFalling == false:
+		self.position += Vector2(0,-0.1)
+		posCounter -= 0.1
+		if posCounter <= -3:
+			isFalling = true
+	else:
+		self.position += Vector2(0,0.1)
+		posCounter += 0.1
+		if posCounter >= 0:
+			isFalling = false
+
 	if ArrowArea.overlaps_body(PCbody) and !(self.position in usedPoints):
 		self.set_visible(true)
 		if PCbody.canInteract == false and PCbody.inList == false: # prevents it from reassigning every frame and wasting resources
