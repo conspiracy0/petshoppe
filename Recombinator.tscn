@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorbg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe1.png" type="Texture" id=2]
@@ -27,6 +27,36 @@
 [ext_resource path="res://Sprites/Lab/test tubes/pink.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/Lab/test tubes/yellow.png" type="Texture" id=26]
 [ext_resource path="res://Sprites/Lab/test tubes/darkgreen.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/redlightleft.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/redlightright.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/button3.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Lab/RECOMBINATOR/button.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/animalbox.png" type="Texture" id=32]
+[ext_resource path="res://Animals.gd" type="Script" id=33]
+[ext_resource path="res://Sprites/animals/Cat/catbody.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/animals/Cat/cathead.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/animals/Cat/catpaws.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/animals/Cat/catears.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/animals/Cat/cateyes.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/animals/Cat/catmouth.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/animals/Eagle/eaglebody.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/animals/Eagle/eaglepaws.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/animals/Eagle/eaglehead.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/animals/Eagle/eagleeyes.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/animals/Eagle/eaglemouth.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/animals/Eagle/eagleears.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/animals/Dog/dogbody.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/animals/Dog/dogpaws.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/animals/Dog/doghead.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/animals/Dog/dogeyes.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/animals/Dog/dogmouth.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/animals/Dog/dogears.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/animals/Fox/foxbody.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/animals/Fox/foxpaws.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/animals/Fox/foxhead.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/animals/Fox/foxeyes.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/animals/Fox/foxmouth.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/animals/Fox/foxears.png" type="Texture" id=57]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -53,7 +83,7 @@ animations = [ {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "idle1",
-"speed": 0.15
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
@@ -79,12 +109,63 @@ use_filter = false
 font_data = ExtResource( 23 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 12
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 23 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.33763, 10 )
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 23 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=11]
+
+size = 36
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 23 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=12]
+
+size = 12
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 23 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="Recombinator" type="Node" index="0"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
-position = Vector2( 320.629, 240.11 )
+position = Vector2( 319.629, 240.11 )
 scale = Vector2( 2.28383, 2.28424 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility", "Z Index" ]
@@ -93,16 +174,14 @@ _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility", "Z Index
 
 position = Vector2( -112.706, -6.50784 )
 frames = SubResource( 1 )
-animation = "activate"
-frame = 8
-playing = true
+animation = "idle"
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PC" type="AnimatedSprite" parent="Background" index="1"]
 
 position = Vector2( -95.4068, -2.04572 )
 frames = SubResource( 2 )
-animation = "idle1"
+animation = "idle2"
 playing = true
 
 [node name="Machine" type="Sprite" parent="." index="1"]
@@ -115,9 +194,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="SliderTube1" type="Sprite" parent="Machine" index="0"]
 
+editor/display_folded = true
 position = Vector2( -43.3394, 13.5879 )
 texture = ExtResource( 22 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="Machine/SliderTube1" index="0"]
 
@@ -137,7 +217,8 @@ shape = SubResource( 3 )
 
 [node name="SliderTube2" type="Sprite" parent="Machine" index="1"]
 
-position = Vector2( -15.3163, 15.339 )
+editor/display_folded = true
+position = Vector2( -15.3163, 14.9013 )
 texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform" ]
 
@@ -160,7 +241,8 @@ shape = SubResource( 3 )
 
 [node name="SliderTube3" type="Sprite" parent="Machine" index="2"]
 
-position = Vector2( 14.4582, 15.339 )
+editor/display_folded = true
+position = Vector2( 14.4582, 14.9013 )
 texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform" ]
 
@@ -183,6 +265,7 @@ shape = SubResource( 3 )
 
 [node name="SliderTube4" type="Sprite" parent="Machine" index="3"]
 
+editor/display_folded = true
 position = Vector2( 41.6055, 13.5879 )
 texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform" ]
@@ -206,6 +289,7 @@ shape = SubResource( 3 )
 
 [node name="LabelTube1" type="Label" parent="Machine" index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -223,11 +307,79 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
-text = "HAMSTER"
+text = "Cat"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="LabelArea1" type="Area2D" parent="Machine/LabelTube1" index="0"]
+
+position = Vector2( -2.43764, 3.47491 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LabelTube1/LabelArea1" index="0"]
+
+position = Vector2( 26.8146, 0 )
+scale = Vector2( 3.06266, 1 )
+shape = SubResource( 7 )
+
+[node name="LabelArea2" type="Area2D" parent="Machine/LabelTube1" index="1"]
+
+position = Vector2( 9.99424, 28.5895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LabelTube1/LabelArea2" index="0"]
+
+position = Vector2( 26.8146, 0 )
+scale = Vector2( 3.06266, 1 )
+shape = SubResource( 7 )
+
+[node name="LabelArea3" type="Area2D" parent="Machine/LabelTube1" index="2"]
+
+position = Vector2( 21.4549, 51.7422 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LabelTube1/LabelArea3" index="0"]
+
+position = Vector2( 26.8146, 0 )
+scale = Vector2( 3.06266, 1 )
+shape = SubResource( 7 )
+
+[node name="LabelArea4" type="Area2D" parent="Machine/LabelTube1" index="3"]
+
+position = Vector2( 32.527, 74.11 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LabelTube1/LabelArea4" index="0"]
+
+position = Vector2( 26.8146, 0 )
+scale = Vector2( 3.06266, 1 )
+shape = SubResource( 7 )
 
 [node name="LabelTube2" type="Label" parent="Machine" index="5"]
 
@@ -248,7 +400,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
-text = "HAMSTER"
+text = "Dog"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -273,7 +425,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
-text = "HAMSTER"
+text = "Fox"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -298,7 +450,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.996094, 0.996094, 1 )
-text = "HAMSTER"
+text = "Eagle"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -332,6 +484,961 @@ position = Vector2( 39.3617, -13.165 )
 texture = ExtResource( 27 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
+[node name="LockerArea" type="Area2D" parent="Machine" index="12"]
+
+editor/display_folded = true
+position = Vector2( -41.1589, -14.8846 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Locked1" type="Sprite" parent="Machine/LockerArea" index="0"]
+
+visible = false
+texture = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LockerArea" index="1"]
+
+position = Vector2( 0.281036, -0.65667 )
+scale = Vector2( 0.673632, 0.690349 )
+shape = SubResource( 5 )
+
+[node name="LockerArea2" type="Area2D" parent="Machine" index="13"]
+
+position = Vector2( -14.4495, -13.1335 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Locked2" type="Sprite" parent="Machine/LockerArea2" index="0"]
+
+visible = false
+position = Vector2( 0.437912, 0 )
+texture = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LockerArea2" index="1"]
+
+position = Vector2( 0.281036, -0.65667 )
+scale = Vector2( 0.673632, 0.690349 )
+shape = SubResource( 5 )
+
+[node name="LockerArea3" type="Area2D" parent="Machine" index="14"]
+
+position = Vector2( 14.4055, -13.1335 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Locked3" type="Sprite" parent="Machine/LockerArea3" index="0"]
+
+visible = false
+position = Vector2( 0.437912, 0 )
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LockerArea3" index="1"]
+
+position = Vector2( 0.281036, -0.65667 )
+scale = Vector2( 0.673632, 0.690349 )
+shape = SubResource( 5 )
+
+[node name="LockerArea4" type="Area2D" parent="Machine" index="15"]
+
+position = Vector2( 41.5967, -14.4468 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Locked4" type="Sprite" parent="Machine/LockerArea4" index="0"]
+
+visible = false
+position = Vector2( 0.437973, -0.437775 )
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/LockerArea4" index="1"]
+
+position = Vector2( 0.281036, -0.65667 )
+scale = Vector2( 0.673632, 0.690349 )
+shape = SubResource( 5 )
+
+[node name="Reset" type="Sprite" parent="Machine" index="16"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -94.0539, -8.68744 )
+scale = Vector2( 0.875722, 0.875565 )
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ResetArea" type="Area2D" parent="Machine/Reset" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/Reset/ResetArea" index="0"]
+
+position = Vector2( 0.0748117, -0.243371 )
+scale = Vector2( 2.42209, 1.40693 )
+shape = SubResource( 6 )
+
+[node name="Go" type="Sprite" parent="Machine" index="17"]
+
+visible = false
+position = Vector2( -94.0539, 16.2662 )
+scale = Vector2( 0.875722, 0.875565 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="GoArea" type="Area2D" parent="Machine/Go" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine/Go/GoArea" index="0"]
+
+position = Vector2( 0.0748117, -0.243371 )
+scale = Vector2( 2.42209, 1.40693 )
+shape = SubResource( 6 )
+
+[node name="DNADisplay" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 141.877, 134.571 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DNA1" type="Label" parent="DNADisplay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = -80.0
+margin_right = -11.0
+margin_bottom = -66.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea1" type="Area2D" parent="DNADisplay/DNA1" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA1/DNArea1" index="0"]
+
+position = Vector2( 35.5464, 5.55185 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA2" type="Label" parent="DNADisplay" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = -64.0
+margin_right = -11.0
+margin_bottom = -50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea2" type="Area2D" parent="DNADisplay/DNA2" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA2/DNArea2" index="0"]
+
+position = Vector2( 35.5464, 5.26439 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA3" type="Label" parent="DNADisplay" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = -49.0
+margin_right = -11.0
+margin_bottom = -35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea3" type="Area2D" parent="DNADisplay/DNA3" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA3/DNArea3" index="0"]
+
+position = Vector2( 35.5464, 5.64358 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA4" type="Label" parent="DNADisplay" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = -34.0
+margin_right = -11.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea4" type="Area2D" parent="DNADisplay/DNA4" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA4/DNArea4" index="0"]
+
+position = Vector2( 35.5464, 6.96635 )
+scale = Vector2( 4.18067, 0.711381 )
+shape = SubResource( 9 )
+
+[node name="DNA5" type="Label" parent="DNADisplay" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = -17.0
+margin_right = -11.0
+margin_bottom = -3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea5" type="Area2D" parent="DNADisplay/DNA5" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA5/DNArea5" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA6" type="Label" parent="DNADisplay" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = -1.0
+margin_right = -11.0
+margin_bottom = 13.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea6" type="Area2D" parent="DNADisplay/DNA6" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA6/DNArea6" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA7" type="Label" parent="DNADisplay" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = 15.0
+margin_right = -11.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea7" type="Area2D" parent="DNADisplay/DNA7" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA7/DNArea7" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA8" type="Label" parent="DNADisplay" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -86.0
+margin_top = 31.0
+margin_right = -11.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea8" type="Area2D" parent="DNADisplay/DNA8" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA8/DNArea8" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA9" type="Label" parent="DNADisplay" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = -81.0
+margin_right = 86.0
+margin_bottom = -67.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea9" type="Area2D" parent="DNADisplay/DNA9" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA9/DNArea9" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA10" type="Label" parent="DNADisplay" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = -66.0
+margin_right = 86.0
+margin_bottom = -52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea10" type="Area2D" parent="DNADisplay/DNA10" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA10/DNArea10" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA11" type="Label" parent="DNADisplay" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = -50.0
+margin_right = 86.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea11" type="Area2D" parent="DNADisplay/DNA11" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA11/DNArea11" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="DNA12" type="Label" parent="DNADisplay" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = -34.0
+margin_right = 86.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea12" type="Area2D" parent="DNADisplay/DNA12" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA12/DNArea12" index="0"]
+
+position = Vector2( 35.5464, 6.6876 )
+scale = Vector2( 4.18067, 0.689939 )
+shape = SubResource( 9 )
+
+[node name="DNA13" type="Label" parent="DNADisplay" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = -17.0
+margin_right = 86.0
+margin_bottom = -3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DNArea13" type="Area2D" parent="DNADisplay/DNA13" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNADisplay/DNA13/DNArea13" index="0"]
+
+position = Vector2( 35.5464, 6.40199 )
+scale = Vector2( 4.18067, 0.667968 )
+shape = SubResource( 9 )
+
+[node name="Animals" type="Node" parent="." index="3"]
+
+script = ExtResource( 33 )
+
+[node name="Cat" type="Node2D" parent="Animals" index="0"]
+
+[node name="body" type="Sprite" parent="Animals/Cat" index="0"]
+
+visible = false
+position = Vector2( 294.81, 181.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 34 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals/Cat" index="1"]
+
+visible = false
+position = Vector2( 335.177, 165.398 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals/Cat" index="2"]
+
+visible = false
+position = Vector2( 312.81, 250.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals/Cat" index="3"]
+
+visible = false
+position = Vector2( 337.81, 134.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals/Cat" index="4"]
+
+visible = false
+position = Vector2( 353.036, 159.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 38 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals/Cat" index="5"]
+
+visible = false
+position = Vector2( 363.036, 174.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Eagle" type="Node2D" parent="Animals" index="1"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals/Eagle" index="0"]
+
+visible = false
+position = Vector2( 303.81, 182.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals/Eagle" index="1"]
+
+visible = false
+position = Vector2( 296.149, 243.824 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 41 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals/Eagle" index="2"]
+
+visible = false
+position = Vector2( 323.685, 158.258 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 42 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals/Eagle" index="3"]
+
+visible = false
+position = Vector2( 339.544, 146.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 43 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals/Eagle" index="4"]
+
+visible = false
+position = Vector2( 356.544, 169.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 44 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals/Eagle" index="5"]
+
+visible = false
+position = Vector2( 328.318, 131.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 45 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Dog" type="Node2D" parent="Animals" index="2"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals/Dog" index="0"]
+
+visible = false
+position = Vector2( 303.81, 195.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 46 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals/Dog" index="1"]
+
+visible = false
+position = Vector2( 306.228, 240.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 47 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals/Dog" index="2"]
+
+visible = false
+position = Vector2( 340.685, 154.258 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 48 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals/Dog" index="3"]
+
+visible = false
+position = Vector2( 349.544, 148.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 49 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals/Dog" index="4"]
+
+visible = false
+position = Vector2( 362.544, 173.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 50 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals/Dog" index="5"]
+
+visible = false
+position = Vector2( 333.318, 121.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 51 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Fox" type="Node2D" parent="Animals" index="3"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals/Fox" index="0"]
+
+visible = false
+position = Vector2( 292.81, 195.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 52 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs2" type="Sprite" parent="Animals/Fox" index="1"]
+
+visible = false
+position = Vector2( 304.81, 260.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals/Fox" index="2"]
+
+visible = false
+position = Vector2( 301.228, 254.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 53 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals/Fox" index="3"]
+
+visible = false
+position = Vector2( 343.032, 162.985 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 54 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals/Fox" index="4"]
+
+visible = false
+position = Vector2( 347.544, 163.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals/Fox" index="5"]
+
+visible = false
+position = Vector2( 359.544, 182.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 56 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals/Fox" index="6"]
+
+visible = false
+position = Vector2( 335.318, 139.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 57 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="NameEntry" type="LineEdit" parent="." index="4"]
+
+visible = false
+self_modulate = Color( 0.0227051, 0.96875, 0.702675, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 82.0
+margin_right = 289.0
+margin_bottom = 121.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+focus_mode = 2
+context_menu_enabled = true
+placeholder_text = "Enter here."
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Grow Direction", "Placeholder", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="NameLabel" type="Label" parent="." index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 83.0
+margin_top = 34.0
+margin_right = 723.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 11 )
+text = "Name your creation!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Warning" type="Label" parent="." index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 383.0
+margin_right = 264.0
+margin_bottom = 428.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 12 )
+text = "Your pet inventory is one away from max. After the next creation, you will automatically go to sleep."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [connection signal="mouse_entered" from="Machine/SliderTube1/Area2D" to="Machine" method="_on_Area2D_mouse_entered"]
 
 [connection signal="mouse_exited" from="Machine/SliderTube1/Area2D" to="Machine" method="_on_Area2D_mouse_exited"]
@@ -347,5 +1454,97 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [connection signal="mouse_entered" from="Machine/SliderTube4/Area2D4" to="Machine" method="_on_Area2D4_mouse_entered"]
 
 [connection signal="mouse_exited" from="Machine/SliderTube4/Area2D4" to="Machine" method="_on_Area2D4_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LabelTube1/LabelArea1" to="Machine" method="_on_LabelArea1_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LabelTube1/LabelArea1" to="Machine" method="_on_LabelArea1_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LabelTube1/LabelArea2" to="Machine" method="_on_LabelArea2_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LabelTube1/LabelArea2" to="Machine" method="_on_LabelArea2_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LabelTube1/LabelArea3" to="Machine" method="_on_LabelArea3_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LabelTube1/LabelArea3" to="Machine" method="_on_LabelArea3_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LabelTube1/LabelArea4" to="Machine" method="_on_LabelArea4_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LabelTube1/LabelArea4" to="Machine" method="_on_LabelArea4_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LockerArea" to="Machine" method="_on_LockerArea_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LockerArea" to="Machine" method="_on_LockerArea_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LockerArea2" to="Machine" method="_on_LockerArea2_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LockerArea2" to="Machine" method="_on_LockerArea2_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LockerArea3" to="Machine" method="_on_LockerArea3_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LockerArea3" to="Machine" method="_on_LockerArea3_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/LockerArea4" to="Machine" method="_on_LockerArea4_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/LockerArea4" to="Machine" method="_on_LockerArea4_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/Reset/ResetArea" to="Machine" method="_on_ResetArea_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/Reset/ResetArea" to="Machine" method="_on_ResetArea_mouse_exited"]
+
+[connection signal="mouse_entered" from="Machine/Go/GoArea" to="Machine" method="_on_GoArea_mouse_entered"]
+
+[connection signal="mouse_exited" from="Machine/Go/GoArea" to="Machine" method="_on_GoArea_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA1/DNArea1" to="Machine" method="_on_DNArea1_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA1/DNArea1" to="Machine" method="_on_DNArea1_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA2/DNArea2" to="Machine" method="_on_DNArea2_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA2/DNArea2" to="Machine" method="_on_DNArea2_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA3/DNArea3" to="Machine" method="_on_DNArea3_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA3/DNArea3" to="Machine" method="_on_DNArea3_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA4/DNArea4" to="Machine" method="_on_DNArea4_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA4/DNArea4" to="Machine" method="_on_DNArea4_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA5/DNArea5" to="Machine" method="_on_DNArea5_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA5/DNArea5" to="Machine" method="_on_DNArea5_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA6/DNArea6" to="Machine" method="_on_DNArea6_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA6/DNArea6" to="Machine" method="_on_DNArea6_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA7/DNArea7" to="Machine" method="_on_DNArea7_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA7/DNArea7" to="Machine" method="_on_DNArea7_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA8/DNArea8" to="Machine" method="_on_DNArea8_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA8/DNArea8" to="Machine" method="_on_DNArea8_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA9/DNArea9" to="Machine" method="_on_DNArea9_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA9/DNArea9" to="Machine" method="_on_DNArea9_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA10/DNArea10" to="Machine" method="_on_DNArea10_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA10/DNArea10" to="Machine" method="_on_DNArea10_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA11/DNArea11" to="Machine" method="_on_DNArea11_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA11/DNArea11" to="Machine" method="_on_DNArea11_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA12/DNArea12" to="Machine" method="_on_DNArea12_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA12/DNArea12" to="Machine" method="_on_DNArea12_mouse_exited"]
+
+[connection signal="mouse_entered" from="DNADisplay/DNA13/DNArea13" to="Machine" method="_on_DNArea13_mouse_entered"]
+
+[connection signal="mouse_exited" from="DNADisplay/DNA13/DNArea13" to="Machine" method="_on_DNArea13_mouse_exited"]
 
 

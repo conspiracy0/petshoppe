@@ -1,77 +1,79 @@
 {
+ "cuck mc fuck": {
+  "inUse": false,
+  "makeup": {
+   "body": "Dog",
+   "ears": "Fox",
+   "eyes": "Eagle",
+   "head": "Cat",
+   "legs": "Cat",
+   "mouth": "Fox"
+  }
+ },
+ "cuck mc fuck jr": {
+  "inUse": false,
+  "makeup": {
+   "body": "Fox",
+   "ears": "Dog",
+   "eyes": "Cat",
+   "head": "Eagle",
+   "legs": "Eagle",
+   "mouth": "Dog"
+  }
+ },
+ "fagballs": {
+  "inUse": false,
+  "makeup": {
+   "body": "Eagle",
+   "ears": "Fox",
+   "eyes": "Dog",
+   "head": "Cat",
+   "legs": "Cat",
+   "mouth": "Fox"
+  }
+ },
+ "fagballs jr": {
+  "inUse": false,
+  "makeup": {
+   "body": "Dog",
+   "ears": "Eagle",
+   "eyes": "Cat",
+   "head": "Fox",
+   "legs": "Fox",
+   "mouth": "Eagle"
+  }
+ },
+ "niggerfaggot": {
+  "inUse": false,
+  "makeup": {
+   "body": "Fox",
+   "ears": "Dog",
+   "eyes": "Cat",
+   "head": "Eagle",
+   "legs": "Eagle",
+   "mouth": "Dog"
+  }
+ },
+ "stummy hurt": {
+  "inUse": false,
+  "makeup": {
+   "body": "Cat",
+   "ears": "Eagle",
+   "eyes": "Fox",
+   "head": "Dog",
+   "legs": "Dog",
+   "mouth": "Eagle"
+  }
+ },
  "template": {
   "inUse": false,
   "makeup": {
    "body": "",
    "ears": "",
    "eyes": "",
-   "hands/feet": "",
    "head": "",
    "legs": "",
-   "mouth/nose": "",
-   "personality": "",
-   "size": 0,
-   "tail": ""
-  }
- },
- "test": {
-  "inUse": true,
-  "makeup": {
-   "body": "cat",
-   "ears": "cat",
-   "eyes": "dog",
-   "hands/feet": "dog",
-   "head": "dog",
-   "legs": "dog",
-   "mouth/nose": "dog",
-   "personality": "angry",
-   "size": 2,
-   "tail": "cat"
-  }
- },
- "test2": {
-  "inUse": false,
-  "makeup": {
-   "body": "cat",
-   "ears": "cat",
-   "eyes": "dog",
-   "hands/feet": "dog",
-   "head": "dog",
-   "legs": "dog",
-   "mouth/nose": "dog",
-   "personality": "angry",
-   "size": 2,
-   "tail": "cat"
-  }
- },
- "test3": {
-  "inUse": false,
-  "makeup": {
-   "body": "cat",
-   "ears": "cat",
-   "eyes": "dog",
-   "hands/feet": "dog",
-   "head": "dog",
-   "legs": "dog",
-   "mouth/nose": "dog",
-   "personality": "angry",
-   "size": 2,
-   "tail": "cat"
-  }
- },
- "test4": {
-  "inUse": false,
-  "makeup": {
-   "body": "cat",
-   "ears": "cat",
-   "eyes": "dog",
-   "hands/feet": "dog",
-   "head": "dog",
-   "legs": "dog",
-   "mouth/nose": "dog",
-   "personality": "angry",
-   "size": 2,
-   "tail": "cat"
+   "mouth": ""
   }
  }
 }
