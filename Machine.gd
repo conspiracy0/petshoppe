@@ -78,6 +78,7 @@ var noMoveFlag = false
 var tubeLabelInUse
 var animalNamingFlag = false
 var animPlayingFlag = false
+var boxOpenFlag = false
 func decrementOtherAnimals(event):
 	#decrements other sliders
 	for i in sliders.size():
@@ -141,13 +142,15 @@ func _input(event):
 		if event.pressed == true: # only activates on click not release
 			if animalNamingFlag == false:
 				for i in labelReady.size():
-					if labelReady[i] == true:
+					if labelReady[i] == true and boxOpenFlag == false:
+						boxOpenFlag = true
 						displayDNANode.set_visible(true)
 						tubeLabels[i].text = ""
 						tubeLabelInUse = i
 						break
 				for i in boxLabelReady.size():
 					if boxLabelReady[i] == true:
+						boxOpenFlag = false
 						tubeLabels[tubeLabelInUse].text = boxLabels[i].text
 						displayDNANode.set_visible(false)
 						tubeLabelInUse = -1
