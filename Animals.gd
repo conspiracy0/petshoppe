@@ -35,7 +35,8 @@ onready var animalOffsets = {
 		"eyes": get_node("Fox/eyes").position,
 		"mouth": get_node("Fox/mouth").position,
 		"ears": get_node("Fox/ears").position,
-		"legs": Vector2(295.227997,273.063995)
+		"legs": get_node("Fox/legs").position,
+			#Vector2(295.227997,273.063995) old version
 		},
 	"Gecko": {
 		"body": get_node("Gecko/body").position,
@@ -181,13 +182,13 @@ func assembleAnimal(a1,a2,a3,a4):
 	animalNodes[a2]["head"].z_index = 8
 	animalNodes[a2]["legs"].z_index = 8
 	animalNodes[a2]["head"].position = animalOffsets[a1]["head"]
-	if a2 == "Fox": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(3,8)
-	elif a2 == "Gorilla": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,2)
-	elif a2 == "Penguin": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(-1,2)
-	elif a2 == "Hamster":  animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,2)
-	elif a2 == "Turtle": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,2)
-	elif a2 == "Puppy": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,1)
-	else: animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]
+	#if a2 == "Fox": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(3,8)
+	#elif a2 == "Gorilla": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,2)
+	#elif a2 == "Penguin": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(-1,2)
+	#elif a2 == "Hamster":  animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,2)
+	#elif a2 == "Turtle": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,2)
+	#elif a2 == "Puppy": animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]-Vector2(0,1)
+	animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]
 #offsets facial features to the position on their native animals head
 #subtracted by the difference between the used head and the a1 head 
 
@@ -216,6 +217,7 @@ func assembleAnimal(a1,a2,a3,a4):
 	animalName = nameNode.text
 	nameNode.clear()
 	nameNode.set_visible(false)
+	starNode.set_visible(false)
 	animalNodes[a4]["eyes"].set_visible(false)
 	animalNodes[a3]["ears"].set_visible(false)
 	animalNodes[a3]["mouth"].set_visible(false)
@@ -224,19 +226,19 @@ func assembleAnimal(a1,a2,a3,a4):
 	animalNodes[a1]["body"].set_visible(false)
 	animalList[animalName] = {}
 	animalList[animalName]["makeup"] = {}
-	animalList[animalName]["makeup"]["body"] = a1
-	animalList[animalName]["makeup"]["head"] = a2
-	animalList[animalName]["makeup"]["legs"] = a2
-	animalList[animalName]["makeup"]["ears"] = a3
-	animalList[animalName]["makeup"]["mouth"] = a3
-	animalList[animalName]["makeup"]["eyes"] = a4
+	animalList[animalName]["makeup"]["a1"] = a1
+	animalList[animalName]["makeup"]["a2"] = a2
+	animalList[animalName]["makeup"]["a3"] = a3
+	animalList[animalName]["makeup"]["a4"] = a4
 	animalList[animalName]["inUse"] = false
 	saveAnimalJSON()
 	if animalList.size() == 15:
 		get_node("../Warning").set_visible(true)
 	if animalList.size() == 16:
 		emit_signal("limitReached")
-		
+	
+	machineNode.animPlayingFlag = false
+	machineNode.animalNamingFlag = false
 
 func _ready():
 	#assembles dictionaries of nodes
@@ -246,7 +248,6 @@ func _ready():
 			animalNodes[x.name][y.name] = y
 	loadAnimalJSON()
 	loadDNANames()
-	seeAllCombos()
 	connect("limitReached", self, "onLimitReached")
 
 func onLimitReached(): 

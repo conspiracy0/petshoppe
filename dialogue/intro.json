@@ -22,7 +22,7 @@
 	},
 	"intro3":{
 		"d":[
-			"I better start setting up the animals before customers start arriving.",
+			"Customers should arrive any minute!",
 			{
 				"next":"end",
 				"character":"Rudy",

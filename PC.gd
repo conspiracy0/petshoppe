@@ -13,11 +13,20 @@ onready var selArrow = get_node("../SelectionArrow")
 onready var PCsprite = get_node("AnimatedSprite")
 onready var menuLabels = get_node("AnimalMenu/Labels").get_children()
 onready var menuArrow = get_node("AnimalMenu/MenuArrow")
+onready var animalsNode = get_node("../Animals2")
+onready var dialogueNode = get_node("../Dialogue/DialogueParser")
+onready var menuBox = get_node("AnimalMenu/MenuBox")
+onready var npcNode = get_node("../NPCs")
 var menuPressed = false
 var animalsForSale = []
 var displayBoxPos
 var animalsLoaded = false
 var enterReleased = true
+var animalsEmptyFlag = false
+var introFlag = false
+var day2Flag = false
+var guestCounter = 0
+var startingPos = Vector2(98.270302,155.529999)
 func _ready():
 	
 	pass
@@ -25,7 +34,7 @@ func _ready():
 func _process(delta):
 	if canInteract && enterReleased == true:
 		beginInteraction()
-	if canMove:
+	if canMove == true and animalsEmptyFlag == false:
 		move_player()
 	if inList:
 		operateList()
@@ -34,9 +43,18 @@ func _process(delta):
 	elif !Input.is_key_pressed(KEY_ENTER) and !Input.is_key_pressed(KEY_F):
         enterReleased = true
 		
+func checkForFirstDay():
+	var f = File.new()
+	f.open("res://dialogue/dayFlag.txt",File.READ_WRITE)
+	if f.get_as_text() == "day1":
+		#passed day1
+		day1Flag = true
+		
+	
 func beginInteraction():
-	if menuPressed == false:
+	if menuPressed == false and animalsEmptyFlag == false:
 		if Input.is_key_pressed(KEY_ENTER) or Input.is_key_pressed(KEY_F):
+			print(animalsEmptyFlag)
 			print("began interaction")
 			openAnimalList()
 			menuPressed = true
@@ -83,8 +101,27 @@ func placeAnimal():
 	f.open("res://animal containers/createdanimals.json",File.WRITE)
 	f.store_string(JSON.print(animalsRaw," ", true))
 	f.close()
-	selArrow.usedPoints.append(selArrow.position) #marks the display case as used
-	print(selArrow.position)
+	selArrow.usedPoints.append(selArrow.preHoverPos) #marks the display case as used
+
+	animalsNode.assembleAnimalShop(
+		animalsRaw[animals[selector]]["makeup"]["a1"],
+		animalsRaw[animals[selector]]["makeup"]["a2"],
+		animalsRaw[animals[selector]]["makeup"]["a3"],
+		animalsRaw[animals[selector]]["makeup"]["a4"]
+		)
+		
+	#checks to see if there are no more animals, and transitions if so
+	for x in animalsRaw:
+		if animalsRaw[x]["inUse"] == false:
+			animalsEmptyFlag = false
+			print("not empty")
+			break
+		else:
+			print("empty")
+			animalsEmptyFlag = true
+			for x in animalsNode.shopPlacedSprites:
+				x.set_visible(false)
+			dialogueNode.startDialogue("res://dialogue/intro.json","intro")
 	
 func loadAnimals():
 	if animalsLoaded == false:
@@ -109,6 +146,7 @@ func openAnimalList():
 	canMove = false
 	inList = true
 	menuArrow.set_visible(true)
+	menuBox.set_visible(true)
 	for x in range(animals.size()):
 		menuLabels[x].set_text(animals[x])
 		menuLabels[x].set_visible(true)
@@ -118,6 +156,7 @@ func closeAnimalList():
 	canMove = true
 	inList = false
 	menuArrow.set_visible(false)
+	menuBox.set_visible(false)
 	for x in range(animals.size()):
 		menuLabels[x].set_text("")
 		menuLabels[x].set_visible(false)
@@ -233,3 +272,12 @@ func _on_DC5Bottom_body_entered(body):
 func _on_DC5Top_body_entered(body):
 	if body.get_name() == "PC":
 		selArrow.changeLocation(5,"top")
+
+
+func _on_DialogueParser_dialogue_ended():
+	#for x in animalsNode.shopPlacedSprites:
+	#	x.set_visible(true)
+	self.position = startingPos
+	if introFlag == false:
+		npcNode.get_node("Child").enterBuilding()
+		introFlag = true

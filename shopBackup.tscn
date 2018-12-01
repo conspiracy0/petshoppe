@@ -1,0 +1,1465 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://Sprites/Shop/petshop.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Shop/labdoor1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Shop/labdoor2.png" type="Texture" id=3]
+[ext_resource path="res://PC.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_idle.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_idle.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_idle.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_1.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/arrow.png" type="Texture" id=14]
+[ext_resource path="res://Typefaces/gpzucv.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Sprites/arrowlab.png" type="Texture" id=16]
+[ext_resource path="res://Selection Arrow.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/DialogueParser.gd" type="Script" id=18]
+[ext_resource path="res://IntroDialogue.gd" type="Script" id=19]
+[ext_resource path="res://Typefaces/textbox.png" type="Texture" id=20]
+[ext_resource path="res://Typefaces/header.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthclosed.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthopen.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthhalfopen.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthclosed.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthopen.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthhalfopen.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthclosed.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthopen.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthhalfopen.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/PC/PC_think_mouthclosed.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/PC/PC_think_mouthopen.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/PC/PC_think_mouthhalfopen.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Shop/frontdoor1.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Shop/frontdoor2.png" type="Texture" id=35]
+[ext_resource path="res://Child.gd" type="Script" id=36]
+[ext_resource path="res://Placeholder images/npc.png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=27]
+
+animations = [ {
+"frames": [ null, ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), null ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=28]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=29]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=30]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.24223, 10.1842 )
+
+[sub_resource type="RectangleShape2D" id=31]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=32]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=33]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=34]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.86127, 10 )
+
+[sub_resource type="RectangleShape2D" id=35]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=36]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=37]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=38]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=39]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=40]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.9602, 10 )
+
+[sub_resource type="RectangleShape2D" id=26]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.45883, 10 )
+
+[sub_resource type="SpriteFrames" id=41]
+
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idlefront",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "idleback",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idleside",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "movefront",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "moveside",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "moveback",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=42]
+
+size = 40
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 15 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="RectangleShape2D" id=43]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="DynamicFont" id=44]
+
+size = 15
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 15 )
+_sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
+
+[sub_resource type="DynamicFont" id=45]
+
+size = 20
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 21 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=46]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 21 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="SpriteFrames" id=24]
+
+animations = [ {
+"frames": [ null, ExtResource( 34 ), ExtResource( 35 ), ExtResource( 34 ), null ],
+"loop": false,
+"name": "opendoor",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=25]
+
+animations = [ {
+"frames": [ ExtResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Shop" type="Node" index="0"]
+
+[node name="ShopSprite" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 320.289, 240.649 )
+scale = Vector2( 2.28349, 2.2744 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="LabDoorAnimation" type="AnimatedSprite" parent="ShopSprite" index="0"]
+
+position = Vector2( -97.8364, -68.1338 )
+frames = SubResource( 27 )
+animation = "default"
+
+[node name="Counter" type="StaticBody2D" parent="ShopSprite" index="1"]
+
+editor/display_folded = true
+position = Vector2( -84.7122, -28.2479 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/Counter" index="0"]
+
+position = Vector2( 13.8666, -17.4125 )
+scale = Vector2( 1.10215, 4.21323 )
+shape = SubResource( 28 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ShopSprite/Counter" index="1"]
+
+position = Vector2( -12.1739, 15.1387 )
+scale = Vector2( 1.50283, 0.958908 )
+shape = SubResource( 29 )
+
+[node name="DisplayCase1" type="StaticBody2D" parent="ShopSprite" index="2"]
+
+editor/display_folded = true
+position = Vector2( -84.4064, 56.1888 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase1" index="0"]
+
+visible = false
+position = Vector2( 0.243088, -2.39802 )
+scale = Vector2( 2.78614, 1.96116 )
+shape = SubResource( 30 )
+
+[node name="BoxLeft" type="Area2D" parent="ShopSprite/DisplayCase1" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase1/BoxLeft" index="0"]
+
+position = Vector2( -15.8505, -15.2181 )
+scale = Vector2( 1.76181, 1.53268 )
+shape = SubResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BoxLeft2" type="Area2D" parent="ShopSprite/DisplayCase1" index="2"]
+
+position = Vector2( -3.8147e-006, 30.7773 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase1/BoxLeft2" index="0"]
+
+position = Vector2( -15.9393, -7.3885 )
+scale = Vector2( 1.80232, 2.30336 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BoxRight2" type="Area2D" parent="ShopSprite/DisplayCase1" index="3"]
+
+position = Vector2( 35.911, 30.7773 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase1/BoxRight2" index="0"]
+
+position = Vector2( -15.9393, -7.3885 )
+scale = Vector2( 1.80232, 2.30336 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BoxRight" type="Area2D" parent="ShopSprite/DisplayCase1" index="4"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase1/BoxRight" index="0"]
+
+position = Vector2( 19.8813, -15.2181 )
+scale = Vector2( 1.76181, 1.53268 )
+shape = SubResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DisplayCase2" type="StaticBody2D" parent="ShopSprite" index="3"]
+
+editor/display_folded = true
+position = Vector2( 5.42177, -59.5373 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase2" index="0"]
+
+visible = false
+position = Vector2( 8.87065, 10.1598 )
+scale = Vector2( 4.01418, 1.78152 )
+shape = SubResource( 33 )
+
+[node name="DC2BoxLeft" type="Area2D" parent="ShopSprite/DisplayCase2" index="1"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase2/DC2BoxLeft" index="0"]
+
+position = Vector2( -21.2555, 21.0679 )
+scale = Vector2( 1.70553, 2.29101 )
+shape = SubResource( 34 )
+
+[node name="DC2BoxMiddle" type="Area2D" parent="ShopSprite/DisplayCase2" index="2"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase2/DC2BoxMiddle" index="0"]
+
+position = Vector2( 9.17447, 21.0679 )
+scale = Vector2( 1.32959, 2.29101 )
+shape = SubResource( 34 )
+
+[node name="DC2BoxRight" type="Area2D" parent="ShopSprite/DisplayCase2" index="3"]
+
+visible = false
+position = Vector2( 60.5524, 0.307041 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase2/DC2BoxRight" index="0"]
+
+position = Vector2( -19.4132, 20.5388 )
+scale = Vector2( 1.81808, 2.29101 )
+shape = SubResource( 34 )
+
+[node name="DisplayCase3" type="StaticBody2D" parent="ShopSprite" index="4"]
+
+position = Vector2( -0.416031, 53.4647 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3" index="0"]
+
+visible = false
+position = Vector2( 14.7512, 3.8447 )
+scale = Vector2( 3.91842, 2.2596 )
+shape = SubResource( 35 )
+
+[node name="DC3BoxMiddleBot" type="Area2D" parent="ShopSprite/DisplayCase3" index="1"]
+
+position = Vector2( 5.8378, -113.002 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3/DC3BoxMiddleBot" index="0"]
+
+position = Vector2( 9.24054, 137.627 )
+scale = Vector2( 1.34591, 2.13436 )
+shape = SubResource( 34 )
+
+[node name="DC3BoxMiddleTop" type="Area2D" parent="ShopSprite/DisplayCase3" index="2"]
+
+position = Vector2( 5.8378, -113.002 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3/DC3BoxMiddleTop" index="0"]
+
+position = Vector2( 9.45047, 100.952 )
+scale = Vector2( 1.32959, 1.52407 )
+shape = SubResource( 34 )
+
+[node name="DC3Left2" type="Area2D" parent="ShopSprite/DisplayCase3" index="3"]
+
+position = Vector2( -83.9904, 33.5015 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3/DC3Left2" index="0"]
+
+position = Vector2( 68.1568, -9.91998 )
+scale = Vector2( 1.74787, 2.05259 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DC3Right2" type="Area2D" parent="ShopSprite/DisplayCase3" index="4"]
+
+position = Vector2( -22.1098, 33.9089 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3/DC3Right2" index="0"]
+
+position = Vector2( 68.1568, -9.91998 )
+scale = Vector2( 1.74787, 2.05259 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DC3Left" type="Area2D" parent="ShopSprite/DisplayCase3" index="5"]
+
+position = Vector2( 0.289474, 3.40788 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3/DC3Left" index="0"]
+
+position = Vector2( -15.8505, -15.2181 )
+scale = Vector2( 1.76181, 1.53268 )
+shape = SubResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DC3Right" type="Area2D" parent="ShopSprite/DisplayCase3" index="6"]
+
+position = Vector2( 61.7643, 3.40788 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase3/DC3Right" index="0"]
+
+position = Vector2( -15.8505, -15.2181 )
+scale = Vector2( 1.76181, 1.53268 )
+shape = SubResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DisplayCase4" type="StaticBody2D" parent="ShopSprite" index="5"]
+
+editor/display_folded = true
+position = Vector2( 128.785, -45.6131 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="DC4Solo" type="Area2D" parent="ShopSprite/DisplayCase4" index="0"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -213.191, 132.579 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase4/DC4Solo" index="0"]
+
+position = Vector2( 207.65, -122.245 )
+scale = Vector2( 1.74787, 2.05259 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase4" index="1"]
+
+position = Vector2( -3.06923, -1.61967 )
+scale = Vector2( 1.52393, 1.43368 )
+shape = SubResource( 36 )
+
+[node name="DisplayCase5" type="StaticBody2D" parent="ShopSprite" index="6"]
+
+editor/display_folded = true
+position = Vector2( 131.898, 41.52 )
+scale = Vector2( 0.437926, 0.439676 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase5" index="0"]
+
+visible = false
+position = Vector2( -11.2447, 36.8523 )
+scale = Vector2( 3.04703, 5.15209 )
+shape = SubResource( 37 )
+
+[node name="DC5Bottom" type="Area2D" parent="ShopSprite/DisplayCase5" index="1"]
+
+position = Vector2( -493.929, 103.363 )
+scale = Vector2( 2.28349, 2.2744 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase5/DC5Bottom" index="0"]
+
+position = Vector2( 206.698, -9.82303 )
+scale = Vector2( 1.74787, 2.05259 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DC5Top" type="Area2D" parent="ShopSprite/DisplayCase5" index="2"]
+
+position = Vector2( -493.929, 103.363 )
+scale = Vector2( 2.28349, 2.2744 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/DisplayCase5/DC5Top" index="0"]
+
+position = Vector2( 206.782, -44.3031 )
+scale = Vector2( 1.74787, 1.55642 )
+shape = SubResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallLeft" type="StaticBody2D" parent="ShopSprite" index="7"]
+
+editor/display_folded = true
+position = Vector2( -173.575, -72.8364 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/WallLeft" index="0"]
+
+position = Vector2( 13.5355, 75.9368 )
+scale = Vector2( 2.04119, 10.9564 )
+shape = SubResource( 38 )
+
+[node name="WallRight" type="StaticBody2D" parent="ShopSprite" index="8"]
+
+position = Vector2( -173.575, -72.8364 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/WallRight" index="0"]
+
+position = Vector2( 334.285, 70.1711 )
+scale = Vector2( 2.04119, 10.9564 )
+shape = SubResource( 38 )
+
+[node name="WallTop" type="StaticBody2D" parent="ShopSprite" index="9"]
+
+editor/display_folded = true
+position = Vector2( -46.5585, -90.2494 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/WallTop" index="0"]
+
+position = Vector2( 40.9927, 4.63978 )
+scale = Vector2( 14.6143, 2.39272 )
+shape = SubResource( 39 )
+
+[node name="WallBottom" type="StaticBody2D" parent="ShopSprite" index="10"]
+
+editor/display_folded = true
+position = Vector2( -50.0102, 138.739 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopSprite/WallBottom" index="0"]
+
+position = Vector2( 56.8716, -23.7283 )
+scale = Vector2( 11.6878, 1 )
+shape = SubResource( 40 )
+
+[node name="PC" type="KinematicBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 98.2703, 155.53 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PC" index="0"]
+
+position = Vector2( 1.22446, 7.82487 )
+scale = Vector2( 2.74355, 2.2023 )
+shape = SubResource( 26 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PC" index="1"]
+
+scale = Vector2( 2, 2 )
+frames = SubResource( 41 )
+animation = "idlefront"
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimalMenu" type="Node" parent="PC" index="2"]
+
+[node name="MenuArrow" type="Sprite" parent="PC/AnimalMenu" index="0"]
+
+visible = false
+position = Vector2( 117.76, 86.2372 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Labels" type="Node2D" parent="PC/AnimalMenu" index="1"]
+
+[node name="Label" type="Label" parent="PC/AnimalMenu/Labels" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 66.0
+margin_right = 312.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="PC/AnimalMenu/Labels" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 109.0
+margin_right = 312.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label3" type="Label" parent="PC/AnimalMenu/Labels" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 152.0
+margin_right = 312.0
+margin_bottom = 195.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label4" type="Label" parent="PC/AnimalMenu/Labels" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 195.0
+margin_right = 312.0
+margin_bottom = 238.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label5" type="Label" parent="PC/AnimalMenu/Labels" index="4"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 238.0
+margin_right = 312.0
+margin_bottom = 281.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label6" type="Label" parent="PC/AnimalMenu/Labels" index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 281.0
+margin_right = 312.0
+margin_bottom = 324.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label7" type="Label" parent="PC/AnimalMenu/Labels" index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 324.0
+margin_right = 312.0
+margin_bottom = 367.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label8" type="Label" parent="PC/AnimalMenu/Labels" index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 133.0
+margin_top = 367.0
+margin_right = 312.0
+margin_bottom = 410.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label9" type="Label" parent="PC/AnimalMenu/Labels" index="8"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 238.0
+margin_right = 526.0
+margin_bottom = 281.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label10" type="Label" parent="PC/AnimalMenu/Labels" index="9"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 152.0
+margin_right = 526.0
+margin_bottom = 195.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label11" type="Label" parent="PC/AnimalMenu/Labels" index="10"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 195.0
+margin_right = 526.0
+margin_bottom = 238.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label12" type="Label" parent="PC/AnimalMenu/Labels" index="11"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 109.0
+margin_right = 526.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label13" type="Label" parent="PC/AnimalMenu/Labels" index="12"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 66.0
+margin_right = 526.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label14" type="Label" parent="PC/AnimalMenu/Labels" index="13"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 367.0
+margin_right = 526.0
+margin_bottom = 410.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label15" type="Label" parent="PC/AnimalMenu/Labels" index="14"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 324.0
+margin_right = 526.0
+margin_bottom = 367.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label16" type="Label" parent="PC/AnimalMenu/Labels" index="15"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 347.0
+margin_top = 281.0
+margin_right = 526.0
+margin_bottom = 324.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="SelectionArrow" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 611.625, 379.576 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 16 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="SelectionArrow" index="0"]
+
+position = Vector2( -1, 3.5 )
+scale = Vector2( 0.96875, 0.890625 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArrow/Area2D" index="0"]
+
+visible = false
+position = Vector2( 1.03226, 7.29824 )
+scale = Vector2( 2.61876, 2.86049 )
+shape = SubResource( 43 )
+
+[node name="Dialogue" type="Node" parent="." index="3"]
+
+[node name="DialogueParser" type="Node" parent="Dialogue" index="0"]
+
+script = ExtResource( 18 )
+
+[node name="IntroDialogue" type="Node" parent="Dialogue" index="1"]
+
+script = ExtResource( 19 )
+
+[node name="DialogueBox" type="Sprite" parent="Dialogue" index="2"]
+
+visible = false
+position = Vector2( 319.728, 402.173 )
+scale = Vector2( 2.02451, 1.42857 )
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Button" type="Button" parent="Dialogue/DialogueBox" index="0"]
+
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -155.0
+margin_top = -52.0
+margin_right = 152.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="Label" type="Label" parent="Dialogue/DialogueBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -142.0
+margin_top = -25.0
+margin_right = 142.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 44 )
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "custom_fonts" ]
+
+[node name="Character" type="Label" parent="Dialogue/DialogueBox" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -141.0
+margin_top = -49.0
+margin_right = -4.0
+margin_bottom = -27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 45 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="DoneIndicator" type="Label" parent="Dialogue/DialogueBox" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 26.0
+margin_right = 172.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 46 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="PCTalk" type="Node" parent="Dialogue" index="3"]
+
+[node name="PCTalkSad" type="Sprite" parent="Dialogue/PCTalk" index="0"]
+
+visible = false
+position = Vector2( 99.1732, 186.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SadOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkSad" index="0"]
+
+visible = false
+texture = ExtResource( 23 )
+
+[node name="SadHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkSad" index="1"]
+
+visible = false
+texture = ExtResource( 24 )
+
+[node name="PCTalkHappy" type="Sprite" parent="Dialogue/PCTalk" index="1"]
+
+visible = false
+position = Vector2( 115.173, 186.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="HappyOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkHappy" index="0"]
+
+visible = false
+texture = ExtResource( 26 )
+
+[node name="HappyHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkHappy" index="1"]
+
+visible = false
+texture = ExtResource( 27 )
+
+[node name="PCTalkNeutral" type="Sprite" parent="Dialogue/PCTalk" index="2"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 113.173, 184.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 28 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NeutralMouthOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkNeutral" index="0"]
+
+visible = false
+texture = ExtResource( 29 )
+
+[node name="NeutralMouthHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkNeutral" index="1"]
+
+visible = false
+texture = ExtResource( 30 )
+
+[node name="PCTalkThink" type="Sprite" parent="Dialogue/PCTalk" index="3"]
+
+visible = false
+position = Vector2( 115.173, 188.335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ThinkOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkThink" index="0"]
+
+visible = false
+texture = ExtResource( 32 )
+
+[node name="ThinkHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkThink" index="1"]
+
+visible = false
+texture = ExtResource( 33 )
+
+[node name="NPCs" type="Node" parent="." index="4"]
+
+[node name="FrontDoorAnimation" type="AnimatedSprite" parent="NPCs" index="0"]
+
+position = Vector2( 543.895, 86.4297 )
+scale = Vector2( 2.28349, 2.2744 )
+frames = SubResource( 24 )
+animation = "opendoor"
+
+[node name="Child" type="KinematicBody2D" parent="NPCs" index="1"]
+
+visible = false
+position = Vector2( 543.4, 137.39 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 36 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NPCs/Child" index="0"]
+
+scale = Vector2( 2, 2 )
+frames = SubResource( 25 )
+animation = "default"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NPCs/Child" index="1"]
+
+position = Vector2( 0.766357, 7.55489 )
+scale = Vector2( 2.74355, 2.2023 )
+shape = SubResource( 26 )
+
+[node name="Animals" type="Node" parent="." index="5"]
+
+[node name="PlaceholderAnimal" type="Sprite" parent="Animals" index="0"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase1/BoxLeft" to="PC" method="_on_BoxLeft_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase1/BoxLeft" to="PC" method="_on_BoxLeft_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase1/BoxLeft2" to="PC" method="_on_BoxLeft2_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase1/BoxLeft2" to="PC" method="_on_BoxLeft2_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase1/BoxRight2" to="PC" method="_on_BoxRight2_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase1/BoxRight2" to="PC" method="_on_BoxRight2_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase1/BoxRight" to="PC" method="_on_BoxRight_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase1/BoxRight" to="PC" method="_on_BoxRight_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase2/DC2BoxLeft" to="PC" method="_on_DC2BoxLeft_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase2/DC2BoxLeft" to="PC" method="_on_DC2BoxLeft_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase2/DC2BoxMiddle" to="PC" method="_on_DC2BoxMiddle_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase2/DC2BoxMiddle" to="PC" method="_on_DC2BoxMiddle_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase2/DC2BoxRight" to="PC" method="_on_DC2BoxRight_body_entered"]
+
+[connection signal="body_exited" from="ShopSprite/DisplayCase2/DC2BoxRight" to="PC" method="_on_DC2BoxRight_body_exited"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase3/DC3BoxMiddleBot" to="PC" method="_on_DC3BoxMiddleBot_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase3/DC3BoxMiddleTop" to="PC" method="_on_DC3BoxMiddleTop_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase3/DC3Left2" to="PC" method="_on_DC3Left2_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase3/DC3Right2" to="PC" method="_on_DC3Right2_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase3/DC3Left" to="PC" method="_on_DC3Left_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase3/DC3Right" to="PC" method="_on_DC3Right_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase4/DC4Solo" to="PC" method="_on_DC4Solo_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase5/DC5Bottom" to="PC" method="_on_DC5Bottom_body_entered"]
+
+[connection signal="body_entered" from="ShopSprite/DisplayCase5/DC5Top" to="PC" method="_on_DC5Top_body_entered"]
+
+[connection signal="body_entered" from="SelectionArrow/Area2D" to="PC" method="_on_Area2D_body_entered"]
+
+[connection signal="body_exited" from="SelectionArrow/Area2D" to="PC" method="_on_Area2D_body_exited"]
+
+[connection signal="dialogue_ended" from="Dialogue/DialogueParser" to="NPCs/Child" method="_on_DialogueParser_dialogue_ended"]
+
+[connection signal="pressed" from="Dialogue/DialogueBox/Button" to="Dialogue/DialogueParser" method="_on_Button_pressed"]
+
+

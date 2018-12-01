@@ -137,7 +137,8 @@ func resetMachine():
 func _input(event):
 	if event is InputEventKey and event.scancode == KEY_ENTER and animalNamingFlag == true and event.pressed == true:
 		emit_signal("nameEntered") #yields back to coroutine in Animals
-			
+	if event is InputEventKey and event.scancode == KEY_ESCAPE and animPlayingFlag == false and event.pressed == true:
+		get_tree().change_scene("res://Lab.tscn")
 	if event is InputEventMouseButton: 
 		if event.pressed == true: # only activates on click not release
 			if animalNamingFlag == false:
@@ -173,6 +174,7 @@ func _input(event):
 					resetMachine()
 				for i in lockersSelected.size(): #LOCKER SELECTION, this code could stand to be cleaned up
 					if lockersSelected[i] == true:
+						get_node("../SwitchSFX").play(0)
 						if slidersLocked[i] == false:
 							slidersLocked[i] = true
 							sliderLockedIndexes.append(i)

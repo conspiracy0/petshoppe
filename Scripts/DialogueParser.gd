@@ -20,20 +20,25 @@ var PCthinkOpen
 var PCthinkHalf
 signal dialogue_started
 signal dialogue_ended
-
+signal line_ended
+onready var npcNode = get_parent().get_node("../NPCs")
+var inHaggleFlag = false
 func _ready():
 	loadPCDialogueAnims() 
+	connect("line_ended",self,"on_line_end")
 	connect("dialogue_ended", self, "on_dialogue_ended")
 	connect("dialogue_started", self,"on_dialogue_started")
 	#self.get_parent().get_node("../NPCs/Child").connect("dialogue_started",self,"on_dialogue_started")
 	#self.get_parent().get_node("../NPCs/Child").connect("dialogue_ended",self,"on_dialogue_ended")
+	#startDialogue("res://dialogue/intro.json") to play intro
 func on_dialogue_ended():
 	pass
-
+func on_line_end():
+	pass
 func on_dialogue_started():
 	pass
 
-func startDialogue(jsonpath):
+func startDialogue(jsonpath, start):
 	#load file as json
 	var file = File.new()
 	file.open(jsonpath, file.READ)
@@ -51,19 +56,21 @@ func startDialogue(jsonpath):
 	textBox.set_visible(true)
 	#emit signal and 
 	emit_signal("dialogue_started")
-	scrollText(dialogueStream["intro"])
+	scrollText(dialogueStream[start])
 
 func stopDialogue():
-	textBox.set_visible(false)
-	PCsad.set_visible(false)
-	PCthink.set_visible(false)
-	PChappy.set_visible(false)
-	PCneutral.set_visible(false)
+	if inHaggleFlag == false:
+		textBox.set_visible(false)
+		PCsad.set_visible(false)
+		PCthink.set_visible(false)
+		PChappy.set_visible(false)
+		PCneutral.set_visible(false)
+		#get_node("/root/Shop/PC").canMove = true #readd later for cutscenes maybe
+	emit_signal("dialogue_ended")
 	currDialogue = null
 	dialogueStream = null
 	#signals
-	emit_signal("dialogue_ended")
-	get_node("/root/Shop/PC").canMove = true
+		
 
 func loadPCDialogueAnims():
 	PCneutral = get_node("../PCTalk/PCTalkNeutral")
@@ -115,6 +122,19 @@ func scrollText(jsonfile): #jsonfile should include default path for first dialo
 			PCthink.set_visible(true)
 		else: #sad
 			PCsad.set_visible(true)
+	elif currDialogue["d"][1]["character"] == "Girl1":
+		face = currDialogue["d"][1]["face"]
+		npcNode.get_node("ChildClose").set_visible(false)
+		npcNode.get_node("ChildCloseHappy").set_visible(false)
+		npcNode.get_node("ChildCloseUpset").set_visible(false)
+		print("got here")
+		if face == "neutral":
+			print("neutral")
+			npcNode.get_node("ChildClose").set_visible(true)
+		elif face == "happy":
+			npcNode.get_node("ChildCloseHappy").set_visible(true)
+		else:
+			npcNode.get_node("ChildCloseUpset").set_visible(true)
 			
 	for i in range(currDialogue["d"][0].length()): #gets the max range of string, and iterates displaying each character 1 by 1
 		scroller.start() #this is just godots roundabout way of a wait() function, it prints 1 character every 20 ms
@@ -142,8 +162,11 @@ func scrollText(jsonfile): #jsonfile should include default path for first dialo
 	#removes timer
 	scroller.queue_free()
 	#allows movement to next dialogue prompt
-	get_node("../DialogueBox/Button").set_visible(true)
-	get_node("../DialogueBox/DoneIndicator").set_visible(true)
+
+	emit_signal("line_ended")
+	if inHaggleFlag == false:
+		get_node("../DialogueBox/Button").set_visible(true)
+		get_node("../DialogueBox/DoneIndicator").set_visible(true)
 #random selected animation version
 func PCmouthanim(Face, isEnd):
 	if Face == "neutral":
@@ -217,9 +240,11 @@ func PCmouthanim(Face, isEnd):
 
 
 func _on_Button_pressed():
-	if currDialogue["d"][1]["next"] == "end":
-		stopDialogue()
-	else:
-		#sets and loads next json text dialogue
-		scrollText(dialogueStream[currDialogue["d"][1]["next"]])
-		
+	if inHaggleFlag == false:
+		if currDialogue["d"][1]["next"] == "end":
+			print("got here")
+			stopDialogue()
+		else:
+			#sets and loads next json text dialogue
+			scrollText(dialogueStream[currDialogue["d"][1]["next"]])
+			

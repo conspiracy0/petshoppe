@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pink_Streets.wav-6e2de796cde20e23bcbb110ded180569.sample"
+
+[deps]
+
+source_file="res://music/Pink_Streets.wav"
+dest_files=[ "res://.import/Pink_Streets.wav-6e2de796cde20e23bcbb110ded180569.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

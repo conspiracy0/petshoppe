@@ -1,79 +1,56 @@
 {
+ "cuck jr": {
+  "inUse": true,
+  "makeup": {
+   "a1": "Gecko",
+   "a2": "Gorilla",
+   "a3": "Hamster",
+   "a4": "Fox"
+  }
+ },
+ "cuck jr1": {
+  "inUse": true,
+  "makeup": {
+   "a1": "Gecko",
+   "a2": "Gorilla",
+   "a3": "Hamster",
+   "a4": "Fox"
+  }
+ },
+ "cuck jr2": {
+  "inUse": true,
+  "makeup": {
+   "a1": "Gecko",
+   "a2": "Gorilla",
+   "a3": "Hamster",
+   "a4": "Fox"
+  }
+ },
+ "cuck jr3": {
+  "inUse": true,
+  "makeup": {
+   "a1": "Gecko",
+   "a2": "Gorilla",
+   "a3": "Hamster",
+   "a4": "Fox"
+  }
+ },
  "cuck mc fuck": {
-  "inUse": false,
+  "inUse": true,
   "makeup": {
-   "body": "Dog",
-   "ears": "Fox",
-   "eyes": "Eagle",
-   "head": "Cat",
-   "legs": "Cat",
-   "mouth": "Fox"
-  }
- },
- "cuck mc fuck jr": {
-  "inUse": false,
-  "makeup": {
-   "body": "Fox",
-   "ears": "Dog",
-   "eyes": "Cat",
-   "head": "Eagle",
-   "legs": "Eagle",
-   "mouth": "Dog"
-  }
- },
- "fagballs": {
-  "inUse": false,
-  "makeup": {
-   "body": "Eagle",
-   "ears": "Fox",
-   "eyes": "Dog",
-   "head": "Cat",
-   "legs": "Cat",
-   "mouth": "Fox"
-  }
- },
- "fagballs jr": {
-  "inUse": false,
-  "makeup": {
-   "body": "Dog",
-   "ears": "Eagle",
-   "eyes": "Cat",
-   "head": "Fox",
-   "legs": "Fox",
-   "mouth": "Eagle"
-  }
- },
- "niggerfaggot": {
-  "inUse": false,
-  "makeup": {
-   "body": "Fox",
-   "ears": "Dog",
-   "eyes": "Cat",
-   "head": "Eagle",
-   "legs": "Eagle",
-   "mouth": "Dog"
-  }
- },
- "stummy hurt": {
-  "inUse": false,
-  "makeup": {
-   "body": "Cat",
-   "ears": "Eagle",
-   "eyes": "Fox",
-   "head": "Dog",
-   "legs": "Dog",
-   "mouth": "Eagle"
+   "a1": "Gecko",
+   "a2": "Gorilla",
+   "a3": "Hamster",
+   "a4": "Fox"
   }
  },
  "template": {
-  "inUse": false,
+  "inUse": true,
   "makeup": {
-   "body": "",
-   "ears": "",
-   "eyes": "",
-   "head": "",
-   "legs": "",
-   "mouth": ""
+   "a1": "",
+   "a2": "",
+   "a3": "",
+   "a4": ""
   }
  }
 }

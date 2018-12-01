@@ -28,6 +28,8 @@ var DC5points = {
 var usedPoints = []
 onready var PCbody = get_node("../PC")
 onready var ArrowArea = get_node("Area2D")
+var testFlag = false
+var preHoverPos
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -47,7 +49,7 @@ func _process(delta):
 		if posCounter >= 0:
 			isFalling = false
 
-	if ArrowArea.overlaps_body(PCbody) and !(self.position in usedPoints):
+	if ArrowArea.overlaps_body(PCbody) and !(preHoverPos in usedPoints):
 		self.set_visible(true)
 		if PCbody.canInteract == false and PCbody.inList == false: # prevents it from reassigning every frame and wasting resources
 			PCbody.canInteract = true
@@ -57,6 +59,7 @@ func _process(delta):
 			PCbody.canInteract = false
 
 func changeLocation(dc, newpt):
+	
 	if dc == 1:
 		if !(DC1points[newpt] in usedPoints):
 			self.position = DC1points[newpt]
@@ -72,3 +75,4 @@ func changeLocation(dc, newpt):
 	if dc == 5:
 		if !(DC5points[newpt] in usedPoints):
 			self.position = DC5points[newpt]
+	preHoverPos = self.position

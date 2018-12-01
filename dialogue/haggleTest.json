@@ -1,0 +1,72 @@
+{"greet": {
+		"d":[
+			"Um...I'm really interested in this!",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"neutral"
+			}
+		]
+	},
+
+	"happyAccept":{
+		"d":[
+			"I can't believe something so cute could be so cheap!",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"happy"
+			}
+		]
+	},
+	"neutralAccept":{
+		"d":[
+			"It's so cute! I can't wait to get home and play fetch.",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"neutral"
+			}
+		]
+	},
+	"sadAccept":{
+		"d":[
+			"I guess I have enough money for that...",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"sad"
+			}
+		]
+	},
+	"smallDecline":{
+		"d":[
+			"I don't have enough...",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"sad"
+			}
+		]
+	},
+	"largeDecline":{
+		"d":[
+			"Do I really look like I have that kind of money?",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"sad"
+			}
+		]
+	},
+	"threeDeclines":{
+		"d":[
+			"This is pointless.",
+			{
+				"next":"end",
+				"character":"Girl1",
+				"face":"sad"
+			}
+		]
+	},
+}
