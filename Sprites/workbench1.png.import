@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/npc.png-6413e2b9c326febc2724b9a5db2a8d0e.stex"
+path="res://.import/workbench1.png-b9119b7727d81ef5fe350732075e870b.stex"
 
 [deps]
 
-source_file="res://Placeholder images/npc.png"
-dest_files=[ "res://.import/npc.png-6413e2b9c326febc2724b9a5db2a8d0e.stex" ]
+source_file="res://Sprites/workbench1.png"
+dest_files=[ "res://.import/workbench1.png-b9119b7727d81ef5fe350732075e870b.stex" ]
 
 [params]
 
