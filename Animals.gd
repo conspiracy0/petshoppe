@@ -113,7 +113,23 @@ onready var animalOffsets = {
 	}
 var animalNodes = {}
 var animalList
+var animalCosts = {
+	"Cat": 50,
+	"Dog": 50,
+	"Eagle" : 150,
+	"Fox" : 100,
+	"Gecko": 100,
+	"Goldfish": 50,
+	"Gorilla": 200,
+	"Hamster": 100,
+	"Lion": 300,
+	"Parrot": 100,
+	"Puppy": 100,
+	"Turtle": 150
+	}
 signal limitReached
+var money = 0
+var currCost = 0
 onready var PCnode = get_node("../Background/PC")
 onready var RCnode = get_node("../Background/Recombinator")
 onready var nameNode = get_node("../NameEntry")
@@ -134,6 +150,19 @@ onready var DNALabels = [
 	get_node("../DNADisplay/DNA12"),
 	get_node("../DNADisplay/DNA13")
 	]
+func checkMoney():
+	var f = File.new()
+	f.open("user://money.txt",File.READ)
+	money = int(f.get_as_text())
+	f.close()
+	get_node("../TotalMoneyLabel").text = "Total Money: $" + str(money)
+	
+func writeMoney():
+	var f = File.new()
+	f.open("user://money.txt",File.WRITE)
+	f.store_string(str(money))
+	f.close()
+
 func seeAllCombos():
 	var scroller = Timer.new()
 	scroller.set_one_shot(true)
@@ -146,19 +175,30 @@ func seeAllCombos():
 		animalNodes[x]["head"].set_visible(false)
 		animalNodes[x]["legs"].set_visible(false)
 	scroller.queue_free()
+func updateCost():
+	var tempText
+	var tempCostSum = 0
+	for x in machineNode.tubeLabels:
+		tempText = x.text
+		tempCostSum += animalCosts[tempText]
+	get_node("../CostLabel").text = "Cost to make: $" + str(tempCostSum)
+	currCost = tempCostSum
+func updateMoney(cost):
+	get_node("../TotalMoneyLabel").text = "Total Money: $" + str(money-cost)
+	money -= cost
 func loadDNANames():
 	for i in range(12):
 		DNALabels[i].text = animals[i]
 func loadAnimalJSON():
 	var f = File.new()
-	f.open("res://animal containers/createdanimals.json", File.READ)
+	f.open("user://createdanimals.json", File.READ)
 	animalList= parse_json(f.get_as_text())
 	if animalList.size() == 15:
 		get_node("../Warning").set_visible(true)
 	f.close()
 func saveAnimalJSON():
 	var f = File.new()
-	f.open("res://animal containers/createdanimals.json",File.WRITE)
+	f.open("user://createdanimals.json",File.WRITE)
 	f.store_string(JSON.print(animalList," ", true))
 	f.close()
 func assembleAnimal(a1,a2,a3,a4):
@@ -231,17 +271,20 @@ func assembleAnimal(a1,a2,a3,a4):
 	animalList[animalName]["makeup"]["a3"] = a3
 	animalList[animalName]["makeup"]["a4"] = a4
 	animalList[animalName]["inUse"] = false
+	animalList[animalName]["cost"] = currCost
 	saveAnimalJSON()
 	if animalList.size() == 15:
 		get_node("../Warning").set_visible(true)
 	if animalList.size() == 16:
 		emit_signal("limitReached")
-	
 	machineNode.animPlayingFlag = false
 	machineNode.animalNamingFlag = false
-
+	updateMoney(currCost)
+	get_node("../MachineInstructions").set_visible(true)
+	
 func _ready():
 	#assembles dictionaries of nodes
+	checkMoney()
 	for x in self.get_children():
 		animalNodes[x.name] = {}
 		for y in get_node(x.name).get_children():
@@ -249,6 +292,7 @@ func _ready():
 	loadAnimalJSON()
 	loadDNANames()
 	connect("limitReached", self, "onLimitReached")
+	updateCost()
 
 func onLimitReached(): 
 	#scene transition

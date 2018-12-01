@@ -24,12 +24,17 @@ var animalsLoaded = false
 var enterReleased = true
 var animalsEmptyFlag = false
 var introFlag = false
-var day2Flag = false
+var day1Flag = false
 var guestCounter = 0
 var startingPos = Vector2(98.270302,155.529999)
+var money = 0
+var costsForNPCNode = [] #dont use here
+
 func _ready():
-	
-	pass
+	checkForFirstDay()
+	checkMoney()
+	get_node("../ShopSprite/LabDoorAnimation").play("default")
+	print(day1Flag)
 
 func _process(delta):
 	if canInteract && enterReleased == true:
@@ -43,14 +48,58 @@ func _process(delta):
 	elif !Input.is_key_pressed(KEY_ENTER) and !Input.is_key_pressed(KEY_F):
         enterReleased = true
 		
-func checkForFirstDay():
+func writeFirstDay(): #happens after day is over
 	var f = File.new()
-	f.open("res://dialogue/dayFlag.txt",File.READ_WRITE)
+	f.open("user://dayFlag.txt",File.WRITE)
+	f.store_string("day1")
+	f.close()
+func checkForFirstDay(): #not used yet and revise
+	var f = File.new()
+	f.open("user://dayFlag.txt",File.READ)
 	if f.get_as_text() == "day1":
 		#passed day1
 		day1Flag = true
-		
+		introFlag = true
+	f.close()
+func checkMoney():
+	var f = File.new()
+	f.open("user://money.txt",File.READ)
+	money = int(f.get_as_text())
+	f.close()
+
+func writeMoney():
+	var f = File.new()
+	f.open("user://money.txt",File.WRITE)
+	f.store_string(str(money))
+	f.close()
+
+func startCustomers():
+	PCsprite.play("idleside")
+	self.position = startingPos
+	var custWait = Timer.new()
+	custWait.set_one_shot(true)
+	custWait.set_wait_time(2)
+	self.add_child(custWait)
+	for x in animalsForSale:
+		npcNode.get_node("Child").enterBuilding()
+		print("entering (PCNODE)")
+		yield(npcNode.get_node("Child"),"cycle_completed")
+		print("cycle complete(PCNODE)")
+		custWait.start()
+		yield(custWait,"timeout")
+		print("finished 1 cycle")
+		print("money", money)
 	
+	if day1Flag == false:
+		writeFirstDay()
+		writeMoney()
+	#transition begin
+	get_node("../MoneyLabel").text = "Money at end of day: $" + str(money)
+	get_node("../MoneyLabel").set_visible(true)
+	custWait.start()
+	yield(custWait,"timeout")
+	custWait.queue_free() #removes timer after cycle done
+	get_tree().change_scene("res://Lab.tscn")
 func beginInteraction():
 	if menuPressed == false and animalsEmptyFlag == false:
 		if Input.is_key_pressed(KEY_ENTER) or Input.is_key_pressed(KEY_F):
@@ -95,10 +144,10 @@ func move_player():
 
 func placeAnimal():
 	#assemble sprite and place
-	animalsForSale.append(animals[selector])
 	animalsRaw[animals[selector]]["inUse"] = true
+	costsForNPCNode.append(animalsRaw[animals[selector]]["cost"])
 	var f = File.new()
-	f.open("res://animal containers/createdanimals.json",File.WRITE)
+	f.open("user://createdanimals.json",File.WRITE)
 	f.store_string(JSON.print(animalsRaw," ", true))
 	f.close()
 	selArrow.usedPoints.append(selArrow.preHoverPos) #marks the display case as used
@@ -109,24 +158,36 @@ func placeAnimal():
 		animalsRaw[animals[selector]]["makeup"]["a3"],
 		animalsRaw[animals[selector]]["makeup"]["a4"]
 		)
-		
+	animalsForSale.append([
+		animalsRaw[animals[selector]]["makeup"]["a1"],
+		animalsRaw[animals[selector]]["makeup"]["a2"],
+		animalsRaw[animals[selector]]["makeup"]["a3"],
+		animalsRaw[animals[selector]]["makeup"]["a4"]
+		])
 	#checks to see if there are no more animals, and transitions if so
 	for x in animalsRaw:
-		if animalsRaw[x]["inUse"] == false:
+		if animalsRaw[x]["inUse"] == false and x != "template":
 			animalsEmptyFlag = false
 			print("not empty")
 			break
 		else:
 			print("empty")
 			animalsEmptyFlag = true
-			for x in animalsNode.shopPlacedSprites:
-				x.set_visible(false)
+		
+	if animalsEmptyFlag == true:
+		print("got to empty flag")
+		for x in animalsNode.shopPlacedSprites:
+			x.set_visible(false)
+		if day1Flag == false:
 			dialogueNode.startDialogue("res://dialogue/intro.json","intro")
+		else:
+			startCustomers()
+			#do routine for NPCs entering
 	
 func loadAnimals():
 	if animalsLoaded == false:
 		var f = File.new()
-		f.open("res://animal containers/createdanimals.json", File.READ)
+		f.open("user://createdanimals.json", File.READ)
 		animalsRaw = parse_json(f.get_as_text())
 		f.close()
 		
@@ -277,7 +338,6 @@ func _on_DC5Top_body_entered(body):
 func _on_DialogueParser_dialogue_ended():
 	#for x in animalsNode.shopPlacedSprites:
 	#	x.set_visible(true)
-	self.position = startingPos
 	if introFlag == false:
-		npcNode.get_node("Child").enterBuilding()
+		startCustomers()
 		introFlag = true

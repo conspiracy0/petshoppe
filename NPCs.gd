@@ -22,12 +22,21 @@ var declineCounter = 0
 var leavingFlag = false
 var enteringFlag = false
 var inHaggle = false
+var refusedFlag = false
 
+func initPrice(cost):
+	hmCost.text = "$" + str(cost)
+	hmPrice.text = "$" + str(cost)
+	hmMarkup.text = "100%"
 func startHaggle():
 	inHaggle = true
+	initPrice(PCnode.costsForNPCNode[int(PCnode.guestCounter)])
+	for x in animalsNode.shopPlacedSprites:
+		x.set_visible(false)
 	haggleMenu.set_visible(true)
 	PCdialogueNode.set_visible(true)
 	PCnode.canMove = false
+	haggleNodes[PCnode.guestCounter].set_visible(true)
 	girlNode.set_visible(true)
 	dialogueParseNode.inHaggleFlag = true
 	dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","greet")
@@ -44,19 +53,24 @@ func adjustPrice(direction):
 	else:
 		hmMarkup.text = str(muPercent*100)+"%"
 		hmPrice.text = "$" + str(costNum*muPercent)
-func stopHaggle():
+func stopHaggle(moneyAdded):
+	print("stopHaggle")
 	declineCounter = 0
+	if refusedFlag == false:
+		PCnode.money += moneyAdded
 	haggleMenu.set_visible(false)
 	PCdialogueNode.set_visible(false)
 	girlNode.set_visible(false)
 	girlUpsetNode.set_visible(false)
 	girlHappyNode.set_visible(false)
 	dialogueParseNode.inHaggleFlag = false
+	haggleNodes[PCnode.guestCounter].set_visible(false)
 	dialogueParseNode.stopDialogue()
 	get_node("Child").exitMovementActive = true
+	for x in animalsNode.shopPlacedSprites:
+		x.set_visible(true)
+	
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 func updateLimit():
 	limitWithRand = (girlLimit + rand_range(-40,40))
@@ -67,32 +81,36 @@ func _input(event):
 			var muPercentRaw = float(hmMarkup.text.substr(0,3))
 			#positive numbers mean over limit, negative ones mean under limit
 			var margin = muPercentRaw - limitWithRand
+			var price = float(hmPrice.text.substr(1,3))
 			if margin <= -40:
 				dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","happyAccept")
 				yield(dialogueParseNode,"line_ended")
-				stopHaggle()
+				stopHaggle(price)
 			elif margin <= -20:
 				dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","neutralAccept")
 				yield(dialogueParseNode,"line_ended")
-				stopHaggle()
+				stopHaggle(price)
 			elif margin <= 0:
 				dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","sadAccept")
 				yield(dialogueParseNode,"line_ended")
-				stopHaggle()
+				stopHaggle(price)
 			elif margin <= 40:
 				declineCounter += 1
 				if declineCounter == 3:
 					dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","threeDeclines")
 					yield(dialogueParseNode,"line_ended")
-					stopHaggle()
+					refusedFlag = true
+					stopHaggle(price)
 				else:
 					dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","smallDecline")
 			else:
 				dialogueParseNode.startDialogue("res://dialogue/haggleTest.json","largeDecline")
+				refusedFlag = true
 				yield(dialogueParseNode, "line_ended")
-				stopHaggle()
+				stopHaggle(price)
 			offerClickable = false
 			inHaggle = false
+			refusedFlag = false
 				
 		elif markupDownClickable == true:
 			adjustPrice("down")

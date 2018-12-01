@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=137 format=2]
 
 [ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorbg.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Lab/RECOMBINATOR/recombinatorframe1.png" type="Texture" id=2]
@@ -123,7 +123,6 @@
 [ext_resource path="res://new_styleboxflat.tres" type="StyleBox" id=121]
 [ext_resource path="res://sounds/switch_i_guess.wav" type="AudioStream" id=122]
 [ext_resource path="res://music/pantsless chaps loop version.ogg" type="AudioStream" id=123]
-[ext_resource path="res://MachineInstructions.gd" type="Script" id=124]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -237,14 +236,6 @@ _sections_unfolded = [ "Font", "Settings" ]
 [sub_resource type="DynamicFont" id=13]
 
 size = 24
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 23 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=14]
-
-size = 16
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 23 )
@@ -1232,7 +1223,6 @@ shape = SubResource( 9 )
 
 [node name="StarAnim" type="AnimatedSprite" parent="." index="3"]
 
-editor/display_folded = true
 visible = false
 position = Vector2( 319.965, 224 )
 scale = Vector2( 2.28214, 2 )
@@ -2004,10 +1994,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 9.0
-margin_top = 416.0
-margin_right = 256.0
-margin_bottom = 461.0
+margin_left = 17.0
+margin_top = 383.0
+margin_right = 264.0
+margin_bottom = 428.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -2070,7 +2060,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1.0
 margin_top = 25.0
-margin_right = 181.0
+margin_right = 169.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -2084,32 +2074,6 @@ text = "Cost to make: $"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
-
-[node name="MachineInstructions" type="Label" parent="." index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 326.0
-margin_right = 262.0
-margin_bottom = 477.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 14 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Press the green button to lock the amount of DNA in the tube. Once all tubes are locked, hit Go!"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script = ExtResource( 124 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [connection signal="mouse_entered" from="Machine/SliderTube1/Area2D" to="Machine" method="_on_Area2D_mouse_entered"]

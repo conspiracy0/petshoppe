@@ -8,6 +8,7 @@ var target3 = Vector2(208.487595, 155.529999)
 var hometarget = Vector2(541.518188, 114.636635)
 onready var doorAnim = get_node("../FrontDoorAnimation")
 onready var childAnim = get_node("ChildAnim")
+onready var animalsNode = get_parent().get_node("../Animals2")
 var movement1Done = false
 var movement2Done = false
 var movement3Done = false
@@ -22,19 +23,41 @@ signal cycle_completed
 var exitMovementActive = false
 func _ready():
 	connect("done_entering",self,"_on_done_entering")
-
+	connect("done_exiting",self,"_on_done_exiting")
+	#connect("cycle_completed",self,"_on_cycle_completed")
+	
 func enterBuilding():
+	for x in animalsNode.shopPlacedSprites:
+		x.set_visible(true)
+	doorAnim.frame = 0
 	doorAnim.play("opendoor")
 	introMovementBegin = true
 	self.set_visible(true)
+	print("entering door")
 	
 func exitBuilding():
+	for x in animalsNode.shopPlacedSprites:
+		x.set_visible(true)
 	doorAnim.frame = 0
+	print("exiting building")
 	get_parent().get_node("../PC").guestCounter += 1
-	emit_signal("cycle_completed")
 	doorAnim.play("opendoor")
 	self.set_visible(false)
-	
+	emit_signal("cycle_completed")
+	movement1Done = false
+	movement2Done = false
+	movement3Done = false
+	movement1ExitDone = false
+	movement2ExitDone = false
+	movement3ExitDone = false
+	midpointExitDone = false
+	self.position = hometarget
+	print("cycle_completed")
+
+func _on_cycle_completed():
+	pass
+func _on_done_exiting():
+	pass
 func _on_done_entering():
 	get_parent().startHaggle()
 

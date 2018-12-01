@@ -10,9 +10,9 @@ var creationStarted = false #remember to reset this to false!
 var animalOffsets
 var animalNodes = {}
 var animalList
-var haggleNodes = []
 var shopPlacedSprites = []
 onready var selArrowNode = get_node("../SelectionArrow")
+signal testHagglePlace
 func setShopOffsets():
 	animalOffsets = {
 	"Cat" : {
@@ -123,18 +123,16 @@ func setShopOffsets():
 	}
 func loadAnimalJSON():
 	var f = File.new()
-	f.open("res://animal containers/createdanimals.json", File.READ)
+	f.open("user://createdanimals.json", File.READ)
 	animalList= parse_json(f.get_as_text())
-	if animalList.size() == 15:
-		get_node("../Warning").set_visible(true)
 	f.close()
-func reduceAnimalSpriteSizes():
+func reduceAnimalSpriteSizes(): #deprecated
 	for x in animalNodes:
 		for limb in animalNodes[x]:
 			animalNodes[x][limb].position *= 0.25
 			animalNodes[x][limb].scale *= 0.25
 			
-func growAnimalSpriteSizes():
+func growAnimalSpriteSizes(): #deprecated
 	for x in animalNodes:
 		for limb in animalNodes[x]:
 			animalNodes[x][limb].position *= 4
@@ -157,7 +155,7 @@ func assembleAnimalShop(a1,a2,a3,a4):
 	animalNodes[a2]["legs"].position = animalOffsets[a1]["legs"]
 	spriteCollect.append(animalNodes[a2]["head"].duplicate())
 	spriteCollect.append(animalNodes[a2]["legs"].duplicate())
-#offsets facial features to the position on their native animals head
+#offsets facial featuresfor x in animalsNode to the position on their native animals head
 #subtracted by the difference between the used head and the a1 head 
 
 	animalNodes[a3]["ears"].z_index = 9
@@ -195,10 +193,16 @@ func assembleAnimalShop(a1,a2,a3,a4):
 	for x in haggleNode.get_children():
 		x.position *= .75
 		x.scale *= .75
+		x.set_visible(true)
+	haggleNode.set_visible(false)
 	get_node("../NPCs").haggleNodes.append(haggleNode)
-	
+	print("original pos ", haggleNode)
+	emit_signal("testHagglePlace")
 
+func _on_testHaggleDone():
+	pass
 func _ready():
+	connect("testHagglePlace",self,"_on_testHaggleDone")
 	#assembles dictionaries of nodes
 	for x in self.get_children():
 		animalNodes[x.name] = {}
@@ -207,7 +211,7 @@ func _ready():
 	loadAnimalJSON()
 	#reduceAnimalSpriteSizes()
 	setShopOffsets()
-	#assembleAnimalShop("Cat","Cat","Cat","Cat")
+	#assembleAnimalShop("Fox","Cat","Dog","Lion") #leave in for testing
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

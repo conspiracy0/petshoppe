@@ -127,9 +127,7 @@ func scrollText(jsonfile): #jsonfile should include default path for first dialo
 		npcNode.get_node("ChildClose").set_visible(false)
 		npcNode.get_node("ChildCloseHappy").set_visible(false)
 		npcNode.get_node("ChildCloseUpset").set_visible(false)
-		print("got here")
 		if face == "neutral":
-			print("neutral")
 			npcNode.get_node("ChildClose").set_visible(true)
 		elif face == "happy":
 			npcNode.get_node("ChildCloseHappy").set_visible(true)

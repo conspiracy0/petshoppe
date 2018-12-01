@@ -1,136 +1,137 @@
-[gd_scene load_steps=158 format=2]
+[gd_scene load_steps=160 format=2]
 
 [ext_resource path="res://Sprites/Shop/petshop.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Shop/labdoor1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Shop/labdoor2.png" type="Texture" id=3]
-[ext_resource path="res://Animals2.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/animals/Cat/catbody.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/animals/Cat/cathead.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/animals/Cat/catpaws.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/animals/Cat/catears.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/animals/Cat/cateyes.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/animals/Cat/catmouth.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/animals/Lion/lionbody.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/animals/Lion/lionhead.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/animals/Lion/lionpaws.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/animals/Lion/lionears.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/animals/Lion/lioneyes.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/animals/Lion/lionmouth.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/animals/Hamster/hamsterbody.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/animals/Hamster/hamsterhead.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/animals/Hamster/hamsterpaws.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/animals/Hamster/hamsterears.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/animals/Hamster/hamstereyes.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/animals/Hamster/hamstermouth.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/animals/Gorilla/gorillabody.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/animals/Gorilla/gorillahead.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/animals/Gorilla/gorillapaws.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/animals/Gorilla/gorillaears.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/animals/Gorilla/gorillaeyes.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/animals/Gorilla/gorillamouth.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/animals/Goldfish/fishbody.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/animals/Goldfish/fishhead.png" type="Texture" id=30]
-[ext_resource path="res://Sprites/animals/Goldfish/fishpaws.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/animals/Goldfish/fishears.png" type="Texture" id=32]
-[ext_resource path="res://Sprites/animals/Goldfish/fisheyes.png" type="Texture" id=33]
-[ext_resource path="res://Sprites/animals/Goldfish/fishmouth.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/animals/Gecko/geckobody.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/animals/Gecko/geckohead.png" type="Texture" id=36]
-[ext_resource path="res://Sprites/animals/Gecko/geckopaws.png" type="Texture" id=37]
-[ext_resource path="res://Sprites/animals/Gecko/geckoears.png" type="Texture" id=38]
-[ext_resource path="res://Sprites/animals/Gecko/geckoeyes.png" type="Texture" id=39]
-[ext_resource path="res://Sprites/animals/Gecko/geckomouth.png" type="Texture" id=40]
-[ext_resource path="res://Sprites/animals/Turtle/turtlebody.png" type="Texture" id=41]
-[ext_resource path="res://Sprites/animals/Turtle/turtlehead.png" type="Texture" id=42]
-[ext_resource path="res://Sprites/animals/Turtle/turtlepaws.png" type="Texture" id=43]
-[ext_resource path="res://Sprites/animals/Turtle/turtleears.png" type="Texture" id=44]
-[ext_resource path="res://Sprites/animals/Turtle/turtleeyes.png" type="Texture" id=45]
-[ext_resource path="res://Sprites/animals/Turtle/turtlemouth.png" type="Texture" id=46]
-[ext_resource path="res://Sprites/animals/Eagle/eaglebody.png" type="Texture" id=47]
-[ext_resource path="res://Sprites/animals/Eagle/eaglepaws.png" type="Texture" id=48]
-[ext_resource path="res://Sprites/animals/Eagle/eaglehead.png" type="Texture" id=49]
-[ext_resource path="res://Sprites/animals/Eagle/eagleeyes.png" type="Texture" id=50]
-[ext_resource path="res://Sprites/animals/Eagle/eaglemouth.png" type="Texture" id=51]
-[ext_resource path="res://Sprites/animals/Eagle/eagleears.png" type="Texture" id=52]
-[ext_resource path="res://Sprites/animals/Parrot/parrotbody.png" type="Texture" id=53]
-[ext_resource path="res://Sprites/animals/Parrot/parrotpaws.png" type="Texture" id=54]
-[ext_resource path="res://Sprites/animals/Parrot/parrothead.png" type="Texture" id=55]
-[ext_resource path="res://Sprites/animals/Parrot/parroteyes.png" type="Texture" id=56]
-[ext_resource path="res://Sprites/animals/Parrot/parrotmouth.png" type="Texture" id=57]
-[ext_resource path="res://Sprites/animals/Parrot/parrotears.png" type="Texture" id=58]
-[ext_resource path="res://Sprites/animals/Penguin/penguinbody.png" type="Texture" id=59]
-[ext_resource path="res://Sprites/animals/Penguin/penguinpaws.png" type="Texture" id=60]
-[ext_resource path="res://Sprites/animals/Penguin/penguinhead.png" type="Texture" id=61]
-[ext_resource path="res://Sprites/animals/Penguin/penguineyes.png" type="Texture" id=62]
-[ext_resource path="res://Sprites/animals/Penguin/penguinmouth.png" type="Texture" id=63]
-[ext_resource path="res://Sprites/animals/Penguin/penguinears.png" type="Texture" id=64]
-[ext_resource path="res://Sprites/animals/Dog/dogbody.png" type="Texture" id=65]
-[ext_resource path="res://Sprites/animals/Dog/dogpaws.png" type="Texture" id=66]
-[ext_resource path="res://Sprites/animals/Dog/doghead.png" type="Texture" id=67]
-[ext_resource path="res://Sprites/animals/Dog/dogeyes.png" type="Texture" id=68]
-[ext_resource path="res://Sprites/animals/Dog/dogmouth.png" type="Texture" id=69]
-[ext_resource path="res://Sprites/animals/Dog/dogears.png" type="Texture" id=70]
-[ext_resource path="res://Sprites/animals/Puppy/puppybody.png" type="Texture" id=71]
-[ext_resource path="res://Sprites/animals/Puppy/puppypaws.png" type="Texture" id=72]
-[ext_resource path="res://Sprites/animals/Puppy/puppyhead.png" type="Texture" id=73]
-[ext_resource path="res://Sprites/animals/Puppy/puppyeyes.png" type="Texture" id=74]
-[ext_resource path="res://Sprites/animals/Puppy/puppymouth.png" type="Texture" id=75]
-[ext_resource path="res://Sprites/animals/Puppy/puppyears.png" type="Texture" id=76]
-[ext_resource path="res://Sprites/animals/Fox/foxbody.png" type="Texture" id=77]
-[ext_resource path="res://Sprites/animals/Fox/foxpaws.png" type="Texture" id=78]
-[ext_resource path="res://Sprites/animals/Fox/foxhead.png" type="Texture" id=79]
-[ext_resource path="res://Sprites/animals/Fox/foxeyes.png" type="Texture" id=80]
-[ext_resource path="res://Sprites/animals/Fox/foxmouth.png" type="Texture" id=81]
-[ext_resource path="res://Sprites/animals/Fox/foxears.png" type="Texture" id=82]
-[ext_resource path="res://PC.gd" type="Script" id=83]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_front_idle.png" type="Texture" id=84]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_back_idle.png" type="Texture" id=85]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_side_idle.png" type="Texture" id=86]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_1.png" type="Texture" id=87]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_2.png" type="Texture" id=88]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_1.png" type="Texture" id=89]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_2.png" type="Texture" id=90]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_2.png" type="Texture" id=91]
-[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_1.png" type="Texture" id=92]
-[ext_resource path="res://Sprites/animalbox.png" type="Texture" id=93]
-[ext_resource path="res://Sprites/animalboxarrow.png" type="Texture" id=94]
-[ext_resource path="res://Typefaces/gpzucv.ttf" type="DynamicFontData" id=95]
-[ext_resource path="res://Sprites/arrowlab.png" type="Texture" id=96]
-[ext_resource path="res://Selection Arrow.gd" type="Script" id=97]
-[ext_resource path="res://Scripts/DialogueParser.gd" type="Script" id=98]
-[ext_resource path="res://IntroDialogue.gd" type="Script" id=99]
-[ext_resource path="res://Typefaces/textbox.png" type="Texture" id=100]
-[ext_resource path="res://Typefaces/header.ttf" type="DynamicFontData" id=101]
-[ext_resource path="res://Sprites/PC/PC_sad_mouthclosed.png" type="Texture" id=102]
-[ext_resource path="res://Sprites/PC/PC_sad_mouthopen.png" type="Texture" id=103]
-[ext_resource path="res://Sprites/PC/PC_sad_mouthhalfopen.png" type="Texture" id=104]
-[ext_resource path="res://Sprites/PC/PC_happy_mouthclosed.png" type="Texture" id=105]
-[ext_resource path="res://Sprites/PC/PC_happy_mouthopen.png" type="Texture" id=106]
-[ext_resource path="res://Sprites/PC/PC_happy_mouthhalfopen.png" type="Texture" id=107]
-[ext_resource path="res://Sprites/PC/PC_neutral_mouthclosed.png" type="Texture" id=108]
-[ext_resource path="res://Sprites/PC/PC_neutral_mouthopen.png" type="Texture" id=109]
-[ext_resource path="res://Sprites/PC/PC_neutral_mouthhalfopen.png" type="Texture" id=110]
-[ext_resource path="res://Sprites/PC/PC_think_mouthclosed.png" type="Texture" id=111]
-[ext_resource path="res://Sprites/PC/PC_think_mouthopen.png" type="Texture" id=112]
-[ext_resource path="res://Sprites/PC/PC_think_mouthhalfopen.png" type="Texture" id=113]
-[ext_resource path="res://NPCs.gd" type="Script" id=114]
-[ext_resource path="res://Sprites/Haggle/haggle.png" type="Texture" id=115]
-[ext_resource path="res://Typefaces/rohzrj.otf" type="DynamicFontData" id=116]
-[ext_resource path="res://Sprites/NPCs/Young Girl 1/younggirl1neutral1.png" type="Texture" id=117]
-[ext_resource path="res://Sprites/NPCs/Young Girl 1/younggirl1happy1.png" type="Texture" id=118]
-[ext_resource path="res://Sprites/NPCs/Young Girl 1/younggirl1sad1.png" type="Texture" id=119]
-[ext_resource path="res://Sprites/Shop/frontdoor1.png" type="Texture" id=120]
-[ext_resource path="res://Sprites/Shop/frontdoor2.png" type="Texture" id=121]
-[ext_resource path="res://Child.gd" type="Script" id=122]
-[ext_resource path="res://Sprites/NPCs/walks/girl1front1.png" type="Texture" id=123]
-[ext_resource path="res://Sprites/NPCs/walks/girl1front2.png" type="Texture" id=124]
-[ext_resource path="res://Sprites/NPCs/walks/girl1front3.png" type="Texture" id=125]
-[ext_resource path="res://Sprites/NPCs/walks/girl1back1.png" type="Texture" id=126]
-[ext_resource path="res://Sprites/NPCs/walks/girl1back2.png" type="Texture" id=127]
-[ext_resource path="res://Sprites/NPCs/walks/girl1back3.png" type="Texture" id=128]
-[ext_resource path="res://Sprites/NPCs/walks/girl1side2.png" type="Texture" id=129]
-[ext_resource path="res://Sprites/NPCs/walks/girl1side1.png" type="Texture" id=130]
-[ext_resource path="res://Sprites/NPCs/walks/girl1side3.png" type="Texture" id=131]
+[ext_resource path="res://PC.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_idle.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_walk_2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_idle.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_back_walk_1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_front_idle.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/PC/walk cycles/PC_side_walk_2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/animalbox.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/animalboxarrow.png" type="Texture" id=15]
+[ext_resource path="res://Typefaces/gpzucv.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Sprites/arrowlab.png" type="Texture" id=17]
+[ext_resource path="res://Selection Arrow.gd" type="Script" id=18]
+[ext_resource path="res://Scripts/DialogueParser.gd" type="Script" id=19]
+[ext_resource path="res://IntroDialogue.gd" type="Script" id=20]
+[ext_resource path="res://Typefaces/textbox.png" type="Texture" id=21]
+[ext_resource path="res://Typefaces/header.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthclosed.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthopen.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/PC/PC_sad_mouthhalfopen.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthclosed.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthopen.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/PC/PC_happy_mouthhalfopen.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthclosed.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthopen.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/PC/PC_neutral_mouthhalfopen.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/PC/PC_think_mouthclosed.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/PC/PC_think_mouthopen.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/PC/PC_think_mouthhalfopen.png" type="Texture" id=34]
+[ext_resource path="res://NPCs.gd" type="Script" id=35]
+[ext_resource path="res://Sprites/Haggle/haggle.png" type="Texture" id=36]
+[ext_resource path="res://Typefaces/rohzrj.otf" type="DynamicFontData" id=37]
+[ext_resource path="res://Sprites/NPCs/Young Girl 1/younggirl1neutral1.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/NPCs/Young Girl 1/younggirl1happy1.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/NPCs/Young Girl 1/younggirl1sad1.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Shop/frontdoor1.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Shop/frontdoor2.png" type="Texture" id=42]
+[ext_resource path="res://Child.gd" type="Script" id=43]
+[ext_resource path="res://Sprites/NPCs/walks/girl1front1.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/NPCs/walks/girl1front2.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/NPCs/walks/girl1front3.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/NPCs/walks/girl1back1.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/NPCs/walks/girl1back2.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/NPCs/walks/girl1back3.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/NPCs/walks/girl1side2.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/NPCs/walks/girl1side1.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/NPCs/walks/girl1side3.png" type="Texture" id=52]
+[ext_resource path="res://Animals2.gd" type="Script" id=53]
+[ext_resource path="res://Sprites/animals/Cat/catbody.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/animals/Cat/cathead.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/animals/Cat/catpaws.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/animals/Cat/catears.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/animals/Cat/cateyes.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/animals/Cat/catmouth.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/animals/Lion/lionbody.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/animals/Lion/lionhead.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/animals/Lion/lionpaws.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/animals/Lion/lionears.png" type="Texture" id=63]
+[ext_resource path="res://Sprites/animals/Lion/lioneyes.png" type="Texture" id=64]
+[ext_resource path="res://Sprites/animals/Lion/lionmouth.png" type="Texture" id=65]
+[ext_resource path="res://Sprites/animals/Hamster/hamsterbody.png" type="Texture" id=66]
+[ext_resource path="res://Sprites/animals/Hamster/hamsterhead.png" type="Texture" id=67]
+[ext_resource path="res://Sprites/animals/Hamster/hamsterpaws.png" type="Texture" id=68]
+[ext_resource path="res://Sprites/animals/Hamster/hamsterears.png" type="Texture" id=69]
+[ext_resource path="res://Sprites/animals/Hamster/hamstereyes.png" type="Texture" id=70]
+[ext_resource path="res://Sprites/animals/Hamster/hamstermouth.png" type="Texture" id=71]
+[ext_resource path="res://Sprites/animals/Gorilla/gorillabody.png" type="Texture" id=72]
+[ext_resource path="res://Sprites/animals/Gorilla/gorillahead.png" type="Texture" id=73]
+[ext_resource path="res://Sprites/animals/Gorilla/gorillapaws.png" type="Texture" id=74]
+[ext_resource path="res://Sprites/animals/Gorilla/gorillaears.png" type="Texture" id=75]
+[ext_resource path="res://Sprites/animals/Gorilla/gorillaeyes.png" type="Texture" id=76]
+[ext_resource path="res://Sprites/animals/Gorilla/gorillamouth.png" type="Texture" id=77]
+[ext_resource path="res://Sprites/animals/Goldfish/fishbody.png" type="Texture" id=78]
+[ext_resource path="res://Sprites/animals/Goldfish/fishhead.png" type="Texture" id=79]
+[ext_resource path="res://Sprites/animals/Goldfish/fishpaws.png" type="Texture" id=80]
+[ext_resource path="res://Sprites/animals/Goldfish/fishears.png" type="Texture" id=81]
+[ext_resource path="res://Sprites/animals/Goldfish/fisheyes.png" type="Texture" id=82]
+[ext_resource path="res://Sprites/animals/Goldfish/fishmouth.png" type="Texture" id=83]
+[ext_resource path="res://Sprites/animals/Gecko/geckobody.png" type="Texture" id=84]
+[ext_resource path="res://Sprites/animals/Gecko/geckohead.png" type="Texture" id=85]
+[ext_resource path="res://Sprites/animals/Gecko/geckopaws.png" type="Texture" id=86]
+[ext_resource path="res://Sprites/animals/Gecko/geckoears.png" type="Texture" id=87]
+[ext_resource path="res://Sprites/animals/Gecko/geckoeyes.png" type="Texture" id=88]
+[ext_resource path="res://Sprites/animals/Gecko/geckomouth.png" type="Texture" id=89]
+[ext_resource path="res://Sprites/animals/Turtle/turtlebody.png" type="Texture" id=90]
+[ext_resource path="res://Sprites/animals/Turtle/turtlehead.png" type="Texture" id=91]
+[ext_resource path="res://Sprites/animals/Turtle/turtlepaws.png" type="Texture" id=92]
+[ext_resource path="res://Sprites/animals/Turtle/turtleears.png" type="Texture" id=93]
+[ext_resource path="res://Sprites/animals/Turtle/turtleeyes.png" type="Texture" id=94]
+[ext_resource path="res://Sprites/animals/Turtle/turtlemouth.png" type="Texture" id=95]
+[ext_resource path="res://Sprites/animals/Eagle/eaglebody.png" type="Texture" id=96]
+[ext_resource path="res://Sprites/animals/Eagle/eaglepaws.png" type="Texture" id=97]
+[ext_resource path="res://Sprites/animals/Eagle/eaglehead.png" type="Texture" id=98]
+[ext_resource path="res://Sprites/animals/Eagle/eagleeyes.png" type="Texture" id=99]
+[ext_resource path="res://Sprites/animals/Eagle/eaglemouth.png" type="Texture" id=100]
+[ext_resource path="res://Sprites/animals/Eagle/eagleears.png" type="Texture" id=101]
+[ext_resource path="res://Sprites/animals/Parrot/parrotbody.png" type="Texture" id=102]
+[ext_resource path="res://Sprites/animals/Parrot/parrotpaws.png" type="Texture" id=103]
+[ext_resource path="res://Sprites/animals/Parrot/parrothead.png" type="Texture" id=104]
+[ext_resource path="res://Sprites/animals/Parrot/parroteyes.png" type="Texture" id=105]
+[ext_resource path="res://Sprites/animals/Parrot/parrotmouth.png" type="Texture" id=106]
+[ext_resource path="res://Sprites/animals/Parrot/parrotears.png" type="Texture" id=107]
+[ext_resource path="res://Sprites/animals/Penguin/penguinbody.png" type="Texture" id=108]
+[ext_resource path="res://Sprites/animals/Penguin/penguinpaws.png" type="Texture" id=109]
+[ext_resource path="res://Sprites/animals/Penguin/penguinhead.png" type="Texture" id=110]
+[ext_resource path="res://Sprites/animals/Penguin/penguineyes.png" type="Texture" id=111]
+[ext_resource path="res://Sprites/animals/Penguin/penguinmouth.png" type="Texture" id=112]
+[ext_resource path="res://Sprites/animals/Penguin/penguinears.png" type="Texture" id=113]
+[ext_resource path="res://Sprites/animals/Dog/dogbody.png" type="Texture" id=114]
+[ext_resource path="res://Sprites/animals/Dog/dogpaws.png" type="Texture" id=115]
+[ext_resource path="res://Sprites/animals/Dog/doghead.png" type="Texture" id=116]
+[ext_resource path="res://Sprites/animals/Dog/dogeyes.png" type="Texture" id=117]
+[ext_resource path="res://Sprites/animals/Dog/dogmouth.png" type="Texture" id=118]
+[ext_resource path="res://Sprites/animals/Dog/dogears.png" type="Texture" id=119]
+[ext_resource path="res://Sprites/animals/Puppy/puppybody.png" type="Texture" id=120]
+[ext_resource path="res://Sprites/animals/Puppy/puppypaws.png" type="Texture" id=121]
+[ext_resource path="res://Sprites/animals/Puppy/puppyhead.png" type="Texture" id=122]
+[ext_resource path="res://Sprites/animals/Puppy/puppyeyes.png" type="Texture" id=123]
+[ext_resource path="res://Sprites/animals/Puppy/puppymouth.png" type="Texture" id=124]
+[ext_resource path="res://Sprites/animals/Puppy/puppyears.png" type="Texture" id=125]
+[ext_resource path="res://Sprites/animals/Fox/foxbody.png" type="Texture" id=126]
+[ext_resource path="res://Sprites/animals/Fox/foxpaws.png" type="Texture" id=127]
+[ext_resource path="res://Sprites/animals/Fox/foxhead.png" type="Texture" id=128]
+[ext_resource path="res://Sprites/animals/Fox/foxeyes.png" type="Texture" id=129]
+[ext_resource path="res://Sprites/animals/Fox/foxmouth.png" type="Texture" id=130]
+[ext_resource path="res://Sprites/animals/Fox/foxears.png" type="Texture" id=131]
+[ext_resource path="res://music/backstreet abortion clinic loop.ogg" type="AudioStream" id=132]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -214,34 +215,34 @@ extents = Vector2( 9.45883, 10 )
 [sub_resource type="SpriteFrames" id=16]
 
 animations = [ {
-"frames": [ ExtResource( 84 ) ],
-"loop": true,
-"name": "idlefront",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 85 ) ],
-"loop": true,
-"name": "idleback",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 86 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "idleside",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 87 ), ExtResource( 88 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "movefront",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 89 ), ExtResource( 90 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "moveside",
+"name": "idleback",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 91 ), ExtResource( 92 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "moveback",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "idlefront",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "moveside",
 "speed": 5.0
 } ]
 
@@ -250,7 +251,7 @@ animations = [ {
 size = 28
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 95 )
+font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="RectangleShape2D" id=18]
@@ -263,7 +264,7 @@ extents = Vector2( 10, 10 )
 size = 15
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 95 )
+font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
 
 [sub_resource type="DynamicFont" id=20]
@@ -271,7 +272,7 @@ _sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
 size = 20
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 101 )
+font_data = ExtResource( 22 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=21]
@@ -279,7 +280,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 101 )
+font_data = ExtResource( 22 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=22]
@@ -287,7 +288,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 24
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 116 )
+font_data = ExtResource( 37 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="RectangleShape2D" id=23]
@@ -298,7 +299,7 @@ extents = Vector2( 73.2253, 26.8689 )
 [sub_resource type="SpriteFrames" id=24]
 
 animations = [ {
-"frames": [ null, ExtResource( 120 ), ExtResource( 121 ), ExtResource( 120 ), null ],
+"frames": [ null, ExtResource( 41 ), ExtResource( 42 ), ExtResource( 41 ), null ],
 "loop": false,
 "name": "opendoor",
 "speed": 5.0
@@ -307,22 +308,22 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=25]
 
 animations = [ {
-"frames": [ ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ) ],
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
 "loop": true,
 "name": "front",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ) ],
+"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
 "loop": true,
 "name": "back",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 129 ) ],
+"frames": [ ExtResource( 50 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 130 ), ExtResource( 129 ), ExtResource( 131 ) ],
+"frames": [ ExtResource( 51 ), ExtResource( 50 ), ExtResource( 52 ) ],
 "loop": true,
 "name": "side",
 "speed": 5.0
@@ -333,10 +334,19 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 9.45883, 10 )
 
+[sub_resource type="DynamicFont" id=27]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 37 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="Shop" type="Node" index="0"]
 
 [node name="ShopSprite" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 320.289, 240.649 )
 scale = Vector2( 2.28349, 2.2744 )
 texture = ExtResource( 1 )
@@ -857,721 +867,15 @@ position = Vector2( 56.8716, -23.7283 )
 scale = Vector2( 11.6878, 1 )
 shape = SubResource( 14 )
 
-[node name="Animals2" type="Node" parent="." index="1"]
+[node name="PC" type="KinematicBody2D" parent="." index="1"]
 
 editor/display_folded = true
-script = ExtResource( 4 )
-
-[node name="Cat" type="Node2D" parent="Animals2" index="0"]
-
-[node name="body" type="Sprite" parent="Animals2/Cat" index="0"]
-
-visible = false
-position = Vector2( 277.81, 197.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
-
-[node name="body2" type="Sprite" parent="Animals2/Cat" index="1"]
-
-visible = false
-position = Vector2( 331.96, 84.0138 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Cat" index="2"]
-
-visible = false
-position = Vector2( 318.177, 181.398 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Cat" index="3"]
-
-visible = false
-position = Vector2( 295.81, 265.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Cat" index="4"]
-
-visible = false
-position = Vector2( 320.81, 150.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Cat" index="5"]
-
-visible = false
-position = Vector2( 336.036, 175.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Cat" index="6"]
-
-visible = false
-position = Vector2( 346.036, 190.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Lion" type="Node2D" parent="Animals2" index="1"]
-
-[node name="body" type="Sprite" parent="Animals2/Lion" index="0"]
-
-visible = false
-position = Vector2( 269.31, 222.564 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 11 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Lion" index="1"]
-
-visible = false
-position = Vector2( 333.677, 179.398 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 12 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Lion" index="2"]
-
-visible = false
-position = Vector2( 295.31, 263.564 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 13 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Lion" index="3"]
-
-visible = false
-position = Vector2( 342.31, 167.564 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 14 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Lion" index="4"]
-
-visible = false
-position = Vector2( 350.536, 184.79 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Lion" index="5"]
-
-visible = false
-position = Vector2( 361.536, 204.79 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 16 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Hamster" type="Node2D" parent="Animals2" index="2"]
-
-[node name="body" type="Sprite" parent="Animals2/Hamster" index="0"]
-
-visible = false
-position = Vector2( 291.31, 226.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 17 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Hamster" index="1"]
-
-visible = false
-position = Vector2( 329.677, 199.398 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Hamster" index="2"]
-
-visible = false
-position = Vector2( 290.31, 262.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Hamster" index="3"]
-
-visible = false
-position = Vector2( 318.31, 178.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 20 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Hamster" index="4"]
-
-visible = false
-position = Vector2( 337.536, 197.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 21 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Hamster" index="5"]
-
-visible = false
-position = Vector2( 346.536, 212.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 22 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Gorilla" type="Node2D" parent="Animals2" index="3"]
-
-[node name="body" type="Sprite" parent="Animals2/Gorilla" index="0"]
-
-visible = false
-position = Vector2( 297.81, 224.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 23 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Gorilla" index="1"]
-
-visible = false
-position = Vector2( 321.677, 180.898 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 24 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Gorilla" index="2"]
-
-visible = false
-position = Vector2( 286.81, 268.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 25 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears2" type="Sprite" parent="Animals2/Gorilla" index="3"]
-
-visible = false
-position = Vector2( 316.31, 170.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 20 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Gorilla" index="4"]
-
-visible = false
-position = Vector2( 321.81, 175.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 26 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Gorilla" index="5"]
-
-visible = false
-position = Vector2( 331.036, 181.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 27 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Gorilla" index="6"]
-
-visible = false
-position = Vector2( 342.036, 206.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 28 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Goldfish" type="Node2D" parent="Animals2" index="4"]
-
-[node name="body" type="Sprite" parent="Animals2/Goldfish" index="0"]
-
-visible = false
-position = Vector2( 284.81, 174.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 29 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Goldfish" index="1"]
-
-visible = false
-position = Vector2( 325.177, 166.398 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 30 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Goldfish" index="2"]
-
-visible = false
-position = Vector2( 287.81, 262.564 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 31 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Goldfish" index="3"]
-
-visible = false
-position = Vector2( 319.81, 153.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 32 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Goldfish" index="4"]
-
-visible = false
-position = Vector2( 333.036, 176.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 33 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Goldfish" index="5"]
-
-visible = false
-position = Vector2( 346.036, 206.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 34 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Gecko" type="Node2D" parent="Animals2" index="5"]
-
-[node name="body" type="Sprite" parent="Animals2/Gecko" index="0"]
-
-visible = false
-position = Vector2( 281.81, 208.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 35 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Gecko" index="1"]
-
-visible = false
-position = Vector2( 322.177, 190.398 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 36 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Gecko" index="2"]
-
-visible = false
-position = Vector2( 308.31, 256.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 37 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Gecko" index="3"]
-
-visible = false
-position = Vector2( 319.81, 173.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 38 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Gecko" index="4"]
-
-visible = false
-position = Vector2( 333.036, 184.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 39 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Gecko" index="5"]
-
-visible = false
-position = Vector2( 352.036, 206.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 40 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Turtle" type="Node2D" parent="Animals2" index="6"]
-
-[node name="body" type="Sprite" parent="Animals2/Turtle" index="0"]
-
-visible = false
-position = Vector2( 284.81, 215.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 41 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Turtle" index="1"]
-
-visible = false
-position = Vector2( 332.177, 193.898 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 42 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Turtle" index="2"]
-
-visible = false
-position = Vector2( 299.81, 269.564 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 43 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Turtle" index="3"]
-
-visible = false
-position = Vector2( 325.81, 173.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 44 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Turtle" index="4"]
-
-visible = false
-position = Vector2( 333.036, 185.29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 45 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Turtle" index="5"]
-
-visible = false
-position = Vector2( 349.536, 205.79 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 46 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="Eagle" type="Node2D" parent="Animals2" index="7"]
-
-position = Vector2( 1, 0 )
-
-[node name="body" type="Sprite" parent="Animals2/Eagle" index="0"]
-
-visible = false
-position = Vector2( 304.81, 203.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 47 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Eagle" index="1"]
-
-visible = false
-position = Vector2( 297.149, 264.824 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 48 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Eagle" index="2"]
-
-visible = false
-position = Vector2( 324.685, 179.258 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 49 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Eagle" index="3"]
-
-visible = false
-position = Vector2( 340.544, 167.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 50 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Eagle" index="4"]
-
-visible = false
-position = Vector2( 357.544, 190.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 51 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Eagle" index="5"]
-
-visible = false
-position = Vector2( 329.318, 152.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 52 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Parrot" type="Node2D" parent="Animals2" index="8"]
-
-position = Vector2( 1, 0 )
-
-[node name="body" type="Sprite" parent="Animals2/Parrot" index="0"]
-
-visible = false
-position = Vector2( 289.31, 216.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 53 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Parrot" index="1"]
-
-visible = false
-position = Vector2( 284.649, 251.824 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 54 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Parrot" index="2"]
-
-visible = false
-position = Vector2( 329.685, 141.758 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 55 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Parrot" index="3"]
-
-visible = false
-position = Vector2( 335.044, 147.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 56 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Parrot" index="4"]
-
-visible = false
-position = Vector2( 353.044, 166.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 57 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Parrot" index="5"]
-
-visible = false
-position = Vector2( 323.818, 126.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 58 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Penguin" type="Node2D" parent="Animals2" index="9"]
-
-position = Vector2( 1, 0 )
-
-[node name="body" type="Sprite" parent="Animals2/Penguin" index="0"]
-
-visible = false
-position = Vector2( 289.31, 216.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 59 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Penguin" index="1"]
-
-visible = false
-position = Vector2( 276.149, 261.824 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 60 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Penguin" index="2"]
-
-visible = false
-position = Vector2( 303.685, 179.758 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 61 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Penguin" index="3"]
-
-visible = false
-position = Vector2( 316.044, 174.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 62 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Penguin" index="4"]
-
-visible = false
-position = Vector2( 328.544, 192.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 63 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Penguin" index="5"]
-
-visible = false
-position = Vector2( 298.818, 140.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 64 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="ears2" type="Sprite" parent="Animals2/Penguin" index="6"]
-
-visible = false
-position = Vector2( 303.818, 161.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 58 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Dog" type="Node2D" parent="Animals2" index="10"]
-
-position = Vector2( 1, 0 )
-
-[node name="body" type="Sprite" parent="Animals2/Dog" index="0"]
-
-visible = false
-position = Vector2( 289.81, 214.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 65 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Dog" index="1"]
-
-visible = false
-position = Vector2( 292.228, 258.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 66 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Dog" index="2"]
-
-visible = false
-position = Vector2( 326.685, 173.258 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 67 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Dog" index="3"]
-
-visible = false
-position = Vector2( 335.544, 167.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 68 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Dog" index="4"]
-
-visible = false
-position = Vector2( 348.544, 192.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 69 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Dog" index="5"]
-
-visible = false
-position = Vector2( 319.318, 140.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 70 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Puppy" type="Node2D" parent="Animals2" index="11"]
-
-position = Vector2( 1, 0 )
-
-[node name="body" type="Sprite" parent="Animals2/Puppy" index="0"]
-
-visible = false
-position = Vector2( 285.31, 231.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 71 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Puppy" index="1"]
-
-visible = false
-position = Vector2( 284.728, 266.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 72 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Puppy" index="2"]
-
-visible = false
-position = Vector2( 321.685, 185.758 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 73 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Puppy" index="3"]
-
-visible = false
-position = Vector2( 333.044, 180.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 74 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Puppy" index="4"]
-
-visible = false
-position = Vector2( 346.044, 198.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 75 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Puppy" index="5"]
-
-visible = false
-position = Vector2( 323.818, 168.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 76 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Fox" type="Node2D" parent="Animals2" index="12"]
-
-position = Vector2( 1, 0 )
-
-[node name="body" type="Sprite" parent="Animals2/Fox" index="0"]
-
-visible = false
-position = Vector2( 283.81, 208.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 77 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs3" type="Sprite" parent="Animals2/Fox" index="1"]
-
-visible = false
-position = Vector2( 297.31, 270.564 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 13 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="legs2" type="Sprite" parent="Animals2/Fox" index="2"]
-
-visible = false
-position = Vector2( 295.81, 273.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
-_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
-
-[node name="legs" type="Sprite" parent="Animals2/Fox" index="3"]
-
-visible = false
-position = Vector2( 292.228, 267.064 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 78 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="head" type="Sprite" parent="Animals2/Fox" index="4"]
-
-visible = false
-position = Vector2( 334.032, 175.985 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 79 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="eyes" type="Sprite" parent="Animals2/Fox" index="5"]
-
-visible = false
-position = Vector2( 338.544, 176.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 80 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="mouth" type="Sprite" parent="Animals2/Fox" index="6"]
-
-visible = false
-position = Vector2( 350.544, 195.15 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 81 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="ears" type="Sprite" parent="Animals2/Fox" index="7"]
-
-visible = false
-position = Vector2( 326.318, 152.924 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 82 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="PC" type="KinematicBody2D" parent="." index="2"]
-
 position = Vector2( 98.2703, 155.53 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 83 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PC" index="0"]
@@ -1594,14 +898,14 @@ _sections_unfolded = [ "Transform" ]
 visible = false
 position = Vector2( 348.689, 282.822 )
 scale = Vector2( 2.43496, 2.69305 )
-texture = ExtResource( 93 )
+texture = ExtResource( 14 )
 
 [node name="MenuArrow" type="Sprite" parent="PC/AnimalMenu" index="1"]
 
 visible = false
 position = Vector2( 110.76, 81.2372 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 94 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Labels" type="Node2D" parent="PC/AnimalMenu" index="2"]
@@ -2011,12 +1315,13 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="SelectionArrow" type="Sprite" parent="." index="3"]
+[node name="SelectionArrow" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 611.625, 379.576 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 96 )
-script = ExtResource( 97 )
+texture = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="SelectionArrow" index="0"]
@@ -2038,22 +1343,24 @@ position = Vector2( 1.03226, 7.29824 )
 scale = Vector2( 2.61876, 2.86049 )
 shape = SubResource( 18 )
 
-[node name="Dialogue" type="Node" parent="." index="4"]
+[node name="Dialogue" type="Node" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="DialogueParser" type="Node" parent="Dialogue" index="0"]
 
-script = ExtResource( 98 )
+script = ExtResource( 19 )
 
 [node name="IntroDialogue" type="Node" parent="Dialogue" index="1"]
 
-script = ExtResource( 99 )
+script = ExtResource( 20 )
 
 [node name="DialogueBox" type="Sprite" parent="Dialogue" index="2"]
 
 visible = false
 position = Vector2( 319.728, 402.173 )
 scale = Vector2( 2.02451, 1.42857 )
-texture = ExtResource( 100 )
+texture = ExtResource( 21 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Button" type="Button" parent="Dialogue/DialogueBox" index="0"]
@@ -2161,76 +1468,76 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 visible = false
 position = Vector2( 99.1732, 186.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 102 )
+texture = ExtResource( 23 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SadOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkSad" index="0"]
 
 visible = false
-texture = ExtResource( 103 )
+texture = ExtResource( 24 )
 
 [node name="SadHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkSad" index="1"]
 
 visible = false
-texture = ExtResource( 104 )
+texture = ExtResource( 25 )
 
 [node name="PCTalkHappy" type="Sprite" parent="Dialogue/PCTalk" index="1"]
 
 visible = false
 position = Vector2( 115.173, 186.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 105 )
+texture = ExtResource( 26 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="HappyOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkHappy" index="0"]
 
 visible = false
-texture = ExtResource( 106 )
+texture = ExtResource( 27 )
 
 [node name="HappyHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkHappy" index="1"]
 
 visible = false
-texture = ExtResource( 107 )
+texture = ExtResource( 28 )
 
 [node name="PCTalkNeutral" type="Sprite" parent="Dialogue/PCTalk" index="2"]
 
 visible = false
 position = Vector2( 113.173, 184.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 108 )
+texture = ExtResource( 29 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="NeutralMouthOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkNeutral" index="0"]
 
 visible = false
-texture = ExtResource( 109 )
+texture = ExtResource( 30 )
 
 [node name="NeutralMouthHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkNeutral" index="1"]
 
 visible = false
-texture = ExtResource( 110 )
+texture = ExtResource( 31 )
 
 [node name="PCTalkThink" type="Sprite" parent="Dialogue/PCTalk" index="3"]
 
 visible = false
 position = Vector2( 115.173, 188.335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 111 )
+texture = ExtResource( 32 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ThinkOpen" type="Sprite" parent="Dialogue/PCTalk/PCTalkThink" index="0"]
 
 visible = false
-texture = ExtResource( 112 )
+texture = ExtResource( 33 )
 
 [node name="ThinkHalf" type="Sprite" parent="Dialogue/PCTalk/PCTalkThink" index="1"]
 
 visible = false
-texture = ExtResource( 113 )
+texture = ExtResource( 34 )
 
-[node name="NPCs" type="Node" parent="." index="5"]
+[node name="NPCs" type="Node" parent="." index="4"]
 
-script = ExtResource( 114 )
+script = ExtResource( 35 )
 
 [node name="HaggleMenu" type="Node2D" parent="NPCs" index="0"]
 
@@ -2241,7 +1548,7 @@ visible = false
 
 position = Vector2( 315.515, 170.618 )
 scale = Vector2( 1.75, 1.75 )
-texture = ExtResource( 115 )
+texture = ExtResource( 36 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Markup" type="Label" parent="NPCs/HaggleMenu" index="1"]
@@ -2368,7 +1675,7 @@ shape = SubResource( 23 )
 visible = false
 position = Vector2( 540.301, 216.06 )
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 117 )
+texture = ExtResource( 38 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -2377,7 +1684,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 visible = false
 position = Vector2( 540.301, 216.06 )
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 118 )
+texture = ExtResource( 39 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -2386,7 +1693,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 visible = false
 position = Vector2( 540.301, 216.06 )
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 119 )
+texture = ExtResource( 40 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -2405,7 +1712,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 122 )
+script = ExtResource( 43 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="ChildAnim" type="AnimatedSprite" parent="NPCs/Child" index="0"]
@@ -2420,6 +1727,749 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 0.766357, 7.55489 )
 scale = Vector2( 2.74355, 2.2023 )
 shape = SubResource( 26 )
+
+[node name="Animals2" type="Node" parent="." index="5"]
+
+editor/display_folded = true
+script = ExtResource( 53 )
+
+[node name="Cat" type="Node2D" parent="Animals2" index="0"]
+
+editor/display_folded = true
+
+[node name="body" type="Sprite" parent="Animals2/Cat" index="0"]
+
+visible = false
+position = Vector2( 277.81, 197.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 54 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="body2" type="Sprite" parent="Animals2/Cat" index="1"]
+
+visible = false
+position = Vector2( 331.96, 84.0138 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 54 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Cat" index="2"]
+
+visible = false
+position = Vector2( 318.177, 181.398 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Cat" index="3"]
+
+visible = false
+position = Vector2( 295.81, 265.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 56 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Cat" index="4"]
+
+visible = false
+position = Vector2( 320.81, 150.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 57 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Cat" index="5"]
+
+visible = false
+position = Vector2( 336.036, 175.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 58 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Cat" index="6"]
+
+visible = false
+position = Vector2( 346.036, 190.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 59 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Lion" type="Node2D" parent="Animals2" index="1"]
+
+[node name="body" type="Sprite" parent="Animals2/Lion" index="0"]
+
+visible = false
+position = Vector2( 269.31, 222.564 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 60 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Lion" index="1"]
+
+visible = false
+position = Vector2( 333.677, 179.398 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 61 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Lion" index="2"]
+
+visible = false
+position = Vector2( 295.31, 263.564 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 62 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Lion" index="3"]
+
+visible = false
+position = Vector2( 342.31, 167.564 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 63 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Lion" index="4"]
+
+visible = false
+position = Vector2( 350.536, 184.79 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 64 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Lion" index="5"]
+
+visible = false
+position = Vector2( 361.536, 204.79 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 65 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Hamster" type="Node2D" parent="Animals2" index="2"]
+
+[node name="body" type="Sprite" parent="Animals2/Hamster" index="0"]
+
+visible = false
+position = Vector2( 291.31, 226.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 66 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Hamster" index="1"]
+
+visible = false
+position = Vector2( 329.677, 199.398 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 67 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Hamster" index="2"]
+
+visible = false
+position = Vector2( 290.31, 262.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 68 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Hamster" index="3"]
+
+visible = false
+position = Vector2( 318.31, 178.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 69 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Hamster" index="4"]
+
+visible = false
+position = Vector2( 337.536, 197.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 70 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Hamster" index="5"]
+
+visible = false
+position = Vector2( 346.536, 212.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 71 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Gorilla" type="Node2D" parent="Animals2" index="3"]
+
+[node name="body" type="Sprite" parent="Animals2/Gorilla" index="0"]
+
+visible = false
+position = Vector2( 297.81, 224.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 72 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Gorilla" index="1"]
+
+visible = false
+position = Vector2( 321.677, 180.898 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 73 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Gorilla" index="2"]
+
+visible = false
+position = Vector2( 286.81, 268.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 74 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears2" type="Sprite" parent="Animals2/Gorilla" index="3"]
+
+visible = false
+position = Vector2( 316.31, 170.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 69 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Gorilla" index="4"]
+
+visible = false
+position = Vector2( 321.81, 175.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 75 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Gorilla" index="5"]
+
+visible = false
+position = Vector2( 331.036, 181.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 76 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Gorilla" index="6"]
+
+visible = false
+position = Vector2( 342.036, 206.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 77 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Goldfish" type="Node2D" parent="Animals2" index="4"]
+
+[node name="body" type="Sprite" parent="Animals2/Goldfish" index="0"]
+
+visible = false
+position = Vector2( 284.81, 174.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 78 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Goldfish" index="1"]
+
+visible = false
+position = Vector2( 325.177, 166.398 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 79 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Goldfish" index="2"]
+
+visible = false
+position = Vector2( 287.81, 262.564 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 80 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Goldfish" index="3"]
+
+visible = false
+position = Vector2( 319.81, 153.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 81 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Goldfish" index="4"]
+
+visible = false
+position = Vector2( 333.036, 176.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 82 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Goldfish" index="5"]
+
+visible = false
+position = Vector2( 346.036, 206.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 83 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Gecko" type="Node2D" parent="Animals2" index="5"]
+
+[node name="body" type="Sprite" parent="Animals2/Gecko" index="0"]
+
+visible = false
+position = Vector2( 281.81, 208.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 84 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Gecko" index="1"]
+
+visible = false
+position = Vector2( 322.177, 190.398 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 85 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Gecko" index="2"]
+
+visible = false
+position = Vector2( 308.31, 256.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 86 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Gecko" index="3"]
+
+visible = false
+position = Vector2( 319.81, 173.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 87 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Gecko" index="4"]
+
+visible = false
+position = Vector2( 333.036, 184.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 88 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Gecko" index="5"]
+
+visible = false
+position = Vector2( 352.036, 206.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 89 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Turtle" type="Node2D" parent="Animals2" index="6"]
+
+[node name="body" type="Sprite" parent="Animals2/Turtle" index="0"]
+
+visible = false
+position = Vector2( 284.81, 215.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 90 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Turtle" index="1"]
+
+visible = false
+position = Vector2( 332.177, 193.898 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 91 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Turtle" index="2"]
+
+visible = false
+position = Vector2( 299.81, 269.564 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 92 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Turtle" index="3"]
+
+visible = false
+position = Vector2( 325.81, 173.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 93 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Turtle" index="4"]
+
+visible = false
+position = Vector2( 333.036, 185.29 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 94 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Turtle" index="5"]
+
+visible = false
+position = Vector2( 349.536, 205.79 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 95 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Eagle" type="Node2D" parent="Animals2" index="7"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals2/Eagle" index="0"]
+
+visible = false
+position = Vector2( 304.81, 203.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 96 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Eagle" index="1"]
+
+visible = false
+position = Vector2( 297.149, 264.824 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 97 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Eagle" index="2"]
+
+visible = false
+position = Vector2( 324.685, 179.258 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 98 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Eagle" index="3"]
+
+visible = false
+position = Vector2( 340.544, 167.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 99 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Eagle" index="4"]
+
+visible = false
+position = Vector2( 357.544, 190.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 100 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Eagle" index="5"]
+
+visible = false
+position = Vector2( 329.318, 152.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 101 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Parrot" type="Node2D" parent="Animals2" index="8"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals2/Parrot" index="0"]
+
+visible = false
+position = Vector2( 289.31, 216.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 102 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Parrot" index="1"]
+
+visible = false
+position = Vector2( 284.649, 251.824 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 103 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Parrot" index="2"]
+
+visible = false
+position = Vector2( 329.685, 141.758 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 104 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Parrot" index="3"]
+
+visible = false
+position = Vector2( 335.044, 147.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 105 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Parrot" index="4"]
+
+visible = false
+position = Vector2( 353.044, 166.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 106 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Parrot" index="5"]
+
+visible = false
+position = Vector2( 323.818, 126.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 107 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Penguin" type="Node2D" parent="Animals2" index="9"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals2/Penguin" index="0"]
+
+visible = false
+position = Vector2( 289.31, 216.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 108 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Penguin" index="1"]
+
+visible = false
+position = Vector2( 276.149, 261.824 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 109 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Penguin" index="2"]
+
+visible = false
+position = Vector2( 303.685, 179.758 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 110 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Penguin" index="3"]
+
+visible = false
+position = Vector2( 316.044, 174.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 111 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Penguin" index="4"]
+
+visible = false
+position = Vector2( 328.544, 192.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 112 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Penguin" index="5"]
+
+visible = false
+position = Vector2( 298.818, 140.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 113 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ears2" type="Sprite" parent="Animals2/Penguin" index="6"]
+
+visible = false
+position = Vector2( 303.818, 161.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 107 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Dog" type="Node2D" parent="Animals2" index="10"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals2/Dog" index="0"]
+
+visible = false
+position = Vector2( 289.81, 214.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 114 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Dog" index="1"]
+
+visible = false
+position = Vector2( 292.228, 258.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 115 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Dog" index="2"]
+
+visible = false
+position = Vector2( 326.685, 173.258 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 116 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Dog" index="3"]
+
+visible = false
+position = Vector2( 335.544, 167.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 117 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Dog" index="4"]
+
+visible = false
+position = Vector2( 348.544, 192.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 118 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Dog" index="5"]
+
+visible = false
+position = Vector2( 319.318, 140.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 119 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Puppy" type="Node2D" parent="Animals2" index="11"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals2/Puppy" index="0"]
+
+visible = false
+position = Vector2( 285.31, 231.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 120 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Puppy" index="1"]
+
+visible = false
+position = Vector2( 284.728, 266.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 121 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Puppy" index="2"]
+
+visible = false
+position = Vector2( 321.685, 185.758 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 122 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Puppy" index="3"]
+
+visible = false
+position = Vector2( 333.044, 180.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 123 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Puppy" index="4"]
+
+visible = false
+position = Vector2( 346.044, 198.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 124 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Puppy" index="5"]
+
+visible = false
+position = Vector2( 323.818, 168.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 125 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Fox" type="Node2D" parent="Animals2" index="12"]
+
+position = Vector2( 1, 0 )
+
+[node name="body" type="Sprite" parent="Animals2/Fox" index="0"]
+
+visible = false
+position = Vector2( 283.81, 208.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 126 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs3" type="Sprite" parent="Animals2/Fox" index="1"]
+
+visible = false
+position = Vector2( 297.31, 270.564 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 62 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="legs2" type="Sprite" parent="Animals2/Fox" index="2"]
+
+visible = false
+position = Vector2( 295.81, 273.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 56 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="legs" type="Sprite" parent="Animals2/Fox" index="3"]
+
+visible = false
+position = Vector2( 292.228, 267.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 127 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="head" type="Sprite" parent="Animals2/Fox" index="4"]
+
+visible = false
+position = Vector2( 334.032, 175.985 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 128 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="eyes" type="Sprite" parent="Animals2/Fox" index="5"]
+
+visible = false
+position = Vector2( 338.544, 176.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 129 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="mouth" type="Sprite" parent="Animals2/Fox" index="6"]
+
+visible = false
+position = Vector2( 350.544, 195.15 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 130 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ears" type="Sprite" parent="Animals2/Fox" index="7"]
+
+visible = false
+position = Vector2( 326.318, 152.924 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 131 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="MoneyLabel" type="Label" parent="." index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 201.0
+margin_right = 451.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 27 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Money at end of day: $"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 132 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="ShopSprite/DisplayCase1/BoxLeft" to="PC" method="_on_BoxLeft_body_entered"]
 

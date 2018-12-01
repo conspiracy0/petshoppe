@@ -45,6 +45,7 @@ onready var boxLabels = [
 	get_node("../DNADisplay/DNA12"),
 	get_node("../DNADisplay/DNA13")
 	]
+
 signal nameEntered
 var boxLabelReady = [false,false,false,false,false,false,false,false,false,false,false,false,false]
 var labelReady = [false,false,false,false]
@@ -138,6 +139,7 @@ func _input(event):
 	if event is InputEventKey and event.scancode == KEY_ENTER and animalNamingFlag == true and event.pressed == true:
 		emit_signal("nameEntered") #yields back to coroutine in Animals
 	if event is InputEventKey and event.scancode == KEY_ESCAPE and animPlayingFlag == false and event.pressed == true:
+		animalsNode.writeMoney()
 		get_tree().change_scene("res://Lab.tscn")
 	if event is InputEventMouseButton: 
 		if event.pressed == true: # only activates on click not release
@@ -148,15 +150,20 @@ func _input(event):
 						displayDNANode.set_visible(true)
 						tubeLabels[i].text = ""
 						tubeLabelInUse = i
+						get_node("../TotalMoneyLabel").set_visible(false)
+						get_node("../CostLabel").set_visible(false)
 						break
 				for i in boxLabelReady.size():
 					if boxLabelReady[i] == true:
 						boxOpenFlag = false
 						tubeLabels[tubeLabelInUse].text = boxLabels[i].text
 						displayDNANode.set_visible(false)
+						get_node("../TotalMoneyLabel").set_visible(true)
+						get_node("../CostLabel").set_visible(true)
 						tubeLabelInUse = -1
+						animalsNode.updateCost()
 						break
-				if goReady == true: #creates animal
+				if goReady == true and animalsNode.money > animalsNode.currCost:
 					var tempGoDict = {}
 					var tempGoArray = []
 					for i in range(4):
@@ -170,6 +177,7 @@ func _input(event):
 						tempGoDict[tempGoArray[2]],
 						tempGoDict[tempGoArray[3]])
 					resetMachine()
+					
 				if resetReady == true: #RESETS EVERYTHING
 					resetMachine()
 				for i in lockersSelected.size(): #LOCKER SELECTION, this code could stand to be cleaned up
@@ -197,6 +205,7 @@ func _input(event):
 							lockers[i].set_visible(true)
 					resetButton.set_visible(true)
 					goButton.set_visible(true)
+					get_node("../MachineInstructions").set_visible(false)
 				if slidersBool[0] == true:
 					sliderSelected = 0
 				elif slidersBool[1] == true:

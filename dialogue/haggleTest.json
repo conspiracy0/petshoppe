@@ -21,7 +21,7 @@
 	},
 	"neutralAccept":{
 		"d":[
-			"It's so cute! I can't wait to get home and play fetch.",
+			"It's so cute! I can't wait to get home.",
 			{
 				"next":"end",
 				"character":"Girl1",
